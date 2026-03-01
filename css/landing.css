@@ -166,10 +166,8 @@ input:focus, select:focus, textarea:focus {
    STRUCTURE
 ========================= */
 main{
-    max-width: var(--container);
     margin: 50px auto;
     padding: 0 20px;
-    animation: fadeUp .55s ease;
 }
 
 /* =========================
@@ -207,24 +205,23 @@ main{
     font-size: .98rem
 }
 
-/* =========================
-   CARTES VERSIONS
-========================= */
-.version{
+.edition-version{
     background: var(--white);
     border-radius: var(--r-lg);
     padding: 40px 42px;
+    margin: auto;
     margin-bottom: 64px;
     border: 2px solid var(--eco-leaf);
     box-shadow: 0 18px 40px rgba(76, 175, 80, .18);
     transition: transform var(--t), box-shadow var(--t);
     position: relative;
+    width: 50%;
 }
-.version:hover{
+.edition-version:hover{
     transform: translateY(-4px);
     box-shadow: 0 24px 52px rgba(76, 175, 80, .24);
 }
-.version h3{
+.edition-version h3{
     margin: 0 0 16px 0;
     color: var(--eco-green-dark);
     font-size: 1.65rem;
@@ -237,10 +234,10 @@ main{
     color: #1f3d1f;
 }
 
-.version ul {
+.edition-version ul {
     margin: 0 0 32px 0
 }
-.version li{
+.edition-version li{
     margin-bottom: 14px;
     font-size: 1.05rem;
     line-height: 1.6;
@@ -249,7 +246,7 @@ main{
     gap: 10px;
 }
 
-.version li::before {
+.edition-version li::before {
     content: "🍃";
     margin-top: 2px
 }
@@ -265,11 +262,11 @@ main{
     box-shadow: inset 0 0 0 1px rgba(76, 175, 80, .10);
 }
 @media (max-width:700px){
-    .version {
+    .edition-version {
         padding: 32px 24px
     }
 
-    .version h3 {
+    .edition-version h3 {
         font-size: 1.45rem
     }
 
@@ -277,19 +274,16 @@ main{
         font-size: 1.2rem
     }
 
-    .version li {
+    .edition-version li {
         font-size: 1rem;
         line-height: 1.55
     }
 }
 
-/* =========================
-   RAPPEL RÈGLEMENT (FIXE)
-========================= */
-.rappel-règlement{
+.game-rules {
     position: fixed;
-    bottom: 80px;
-    left: 32px;
+    bottom: 24px;
+    left: 24px;
     z-index: 1000;
     display: flex;
     flex-direction: column;
@@ -307,14 +301,14 @@ main{
 }
 
 @media (max-width: 640px) {
-    .rappel-règlement {
+    .game-rules {
         left: 12px;
         bottom: 20px;
         max-width: 90vw;
         padding: 18px;
     }
 
-    .rappel-règlement .button.small {
+    .game-rules .button.small {
         width: 100%
     }
 }
@@ -410,7 +404,7 @@ main{
     background: linear-gradient(135deg, #66bb6a, #2e7d32)
 }
 
-/* bouton "Choisis ta version !" */
+/* bouton "Choisis ta edition-version !" */
 
 .btn-black:hover, .btn-paypal:hover, .btn-crypto:hover, .btn-carte:hover, .btn-choose:hover {
     filter: brightness(1.12);
@@ -532,16 +526,8 @@ footer {
     color: #244;
 }
 
-/* =========================
-   CONTACT (bouton fixe + panneau)
-========================= */
 #contactBtn{
-    position: fixed;
-    right: 24px;
-    bottom: 24px;
-    z-index: 10000;
     align-items: center;
-    gap: 10px;
     padding: 14px 22px;
     border-radius: var(--pill);
     background: linear-gradient(135deg, var(--white), #f1fdf4);
@@ -716,14 +702,17 @@ footer {
     }
 }
 
-/* =========================
-   BOUTON FLECHE FIXE (À GAUCHE DU CONTACT)
-========================= */
-.back-to-top {
+.tools-panel {
     position: fixed;
-    bottom: 20px;
-    right: 170px;
+    bottom: 24px;
+    right: 24px;
     z-index: 9998;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.back-to-top {
     width: 52px;
     height: 52px;
     display: flex;
