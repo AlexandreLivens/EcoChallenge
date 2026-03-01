@@ -37,9 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") closeContact();
     });
-});
 
-document.addEventListener("DOMContentLoaded", () => {
     const editionSelect = document.getElementById("editionSelect");
     const paiementSelect = document.getElementById("paiementSelect");
     const sousTotalEl = document.getElementById("sousTotal");
@@ -98,6 +96,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialiser à l'ouverture
     updatePrix();
     updatePaiementUI();
+
 });
+
 
 
