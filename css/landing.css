@@ -1,7 +1,4 @@
-/* =========================
-   VARIABLES
-========================= */
-:root{
+:root {
     --eco-green: #4CAF50;
     --eco-green-dark: #2e7d32;
     --eco-leaf: #81C784;
@@ -23,9 +20,6 @@
     --container: 980px;
 }
 
-/* =========================
-   RESET / BASE
-========================= */
 * {
     box-sizing: border-box
 }
@@ -33,7 +27,8 @@
 html {
     scroll-behavior: smooth
 }
-body{
+
+body {
     margin: 0;
     font-family: Poppins, system-ui, Arial, sans-serif;
     background: linear-gradient(to bottom right, var(--eco-cream), var(--eco-sky));
@@ -67,9 +62,6 @@ input:focus, select:focus, textarea:focus {
     box-shadow: var(--glow);
 }
 
-/* =========================
-   ANIMATIONS
-========================= */
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -103,44 +95,31 @@ input:focus, select:focus, textarea:focus {
     }
 }
 
-/* =========================
-   HERO (BANNIÈRE IMAGE) ✅ (remplace le header gris)
-   HTML attendu :
-   <header class="hero">
-     <img class="hero-img" ...>
-     <h1>...</h1>
-   </header>
-========================= */
-
-/* ===== HERO BANNIÈRE (format site) ===== */
 .hero {
     width: 100%;
-    height: 260px; /* ✅ hauteur bannière (change 260 si tu veux) */
+    height: 260px;
     overflow: hidden;
     position: relative;
     background: #eaf5ee;
 }
 
-/* ✅ L’image DOIT remplir la bannière */
 .hero-img {
     width: 100%;
     height: 100%;
     display: block;
-    object-fit: cover; /* ✅ remplit (sinon ça reste énorme) */
-    object-position: center 35%; /* ✅ ajuste le cadrage */
+    object-fit: cover;
+    object-position: center 35%;
 }
 
-/* Image plein écran horizontal */
 .hero-img {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* remplit TOUJOURS */
-    object-position: center center; /* centre parfait */
+    object-fit: cover;
+    object-position: center center;
 }
 
-/* Titre par-dessus */
 .hero h1 {
     position: relative;
     z-index: 2;
@@ -161,18 +140,11 @@ input:focus, select:focus, textarea:focus {
     text-shadow: 0 4px 14px rgba(0, 0, 0, .55);
 }
 
-
-/* =========================
-   STRUCTURE
-========================= */
-main{
+main {
     margin: 50px auto;
     padding: 0 20px;
 }
 
-/* =========================
-   BOUTONS (GLOBAL)
-========================= */
 .button {
     display: inline-flex;
     align-items: center;
@@ -195,7 +167,8 @@ main{
     box-shadow: 0 22px 44px rgba(76, 175, 80, .30);
     filter: saturate(1.05);
 }
-.button:active{
+
+.button:active {
     transform: translateY(0);
     box-shadow: 0 14px 28px rgba(76, 175, 80, .22);
 }
@@ -205,7 +178,7 @@ main{
     font-size: .98rem
 }
 
-.edition-version{
+.edition-version {
     background: var(--white);
     border-radius: var(--r-lg);
     padding: 40px 42px;
@@ -217,17 +190,20 @@ main{
     position: relative;
     width: 50%;
 }
-.edition-version:hover{
+
+.edition-version:hover {
     transform: translateY(-4px);
     box-shadow: 0 24px 52px rgba(76, 175, 80, .24);
 }
-.edition-version h3{
+
+.edition-version h3 {
     margin: 0 0 16px 0;
     color: var(--eco-green-dark);
     font-size: 1.65rem;
     line-height: 1.3;
 }
-.price{
+
+.price {
     font-size: 1.3rem;
     font-weight: 900;
     margin: 0 0 28px 0;
@@ -237,7 +213,8 @@ main{
 .edition-version ul {
     margin: 0 0 32px 0
 }
-.edition-version li{
+
+.edition-version li {
     margin-bottom: 14px;
     font-size: 1.05rem;
     line-height: 1.6;
@@ -250,7 +227,8 @@ main{
     content: "🍃";
     margin-top: 2px
 }
-.tagline{
+
+.tagline {
     margin: 28px 0 32px;
     padding: 18px 22px;
     border-left: 6px solid var(--eco-green);
@@ -261,7 +239,8 @@ main{
     color: #2f5e45;
     box-shadow: inset 0 0 0 1px rgba(76, 175, 80, .10);
 }
-@media (max-width:700px){
+
+@media (max-width: 700px) {
     .edition-version {
         padding: 32px 24px
     }
@@ -313,9 +292,6 @@ main{
     }
 }
 
-/* =========================
-   SECTION COMMANDE
-========================= */
 .order-section {
     max-width: 1200px;
     margin: 80px auto;
@@ -367,7 +343,6 @@ main{
     color: #8fa89a
 }
 
-/* Boutons paiement */
 .btn-black, .btn-paypal, .btn-crypto, .btn-carte, .btn-choose {
     width: 100%;
     padding: 16px;
@@ -381,7 +356,6 @@ main{
     margin-top: 16px;
 }
 
-/* Identique “payer” */
 .btn-black {
     background: var(--black);
     margin-top: 20px;
@@ -395,7 +369,6 @@ main{
     background: linear-gradient(135deg, #ff8c00, #ff6f00)
 }
 
-/* ✅ ORANGE */
 .btn-carte {
     background: linear-gradient(135deg, #2e7d32, #66bb6a)
 }
@@ -403,8 +376,6 @@ main{
 .btn-choose {
     background: linear-gradient(135deg, #66bb6a, #2e7d32)
 }
-
-/* bouton "Choisis ta edition-version !" */
 
 .btn-black:hover, .btn-paypal:hover, .btn-crypto:hover, .btn-carte:hover, .btn-choose:hover {
     filter: brightness(1.12);
@@ -463,9 +434,6 @@ main{
     }
 }
 
-/* =========================
-   INFOS BAR
-========================= */
 .infos-bar {
     max-width: 1000px;
     margin: 30px auto 40px;
@@ -513,9 +481,6 @@ main{
     color: var(--text-soft);
 }
 
-/* =========================
-   FOOTER
-========================= */
 footer {
     margin-top: 120px;
     padding: 30px 10px;
@@ -526,7 +491,7 @@ footer {
     color: #244;
 }
 
-#contactBtn{
+#contactBtn {
     align-items: center;
     padding: 14px 22px;
     border-radius: var(--pill);
@@ -539,13 +504,14 @@ footer {
     cursor: pointer;
     transition: transform var(--t), box-shadow var(--t), filter var(--t);
 }
-#contactBtn:hover{
+
+#contactBtn:hover {
     transform: translateY(-2px);
     box-shadow: 0 22px 44px rgba(76, 175, 80, .32);
     filter: saturate(1.05);
 }
 
-#contactPanel{
+#contactPanel {
     display: none;
     position: fixed;
     right: 24px;
@@ -577,7 +543,7 @@ footer {
     background: transparent
 }
 
-#contactClose{
+#contactClose {
     position: absolute;
     top: 14px;
     right: 14px;
@@ -593,11 +559,13 @@ footer {
     box-shadow: 0 10px 24px rgba(0, 0, 0, .12);
     transition: transform var(--t), box-shadow var(--t);
 }
-#contactClose:hover{
+
+#contactClose:hover {
     transform: scale(1.06);
     box-shadow: 0 16px 32px rgba(0, 0, 0, .16);
 }
-.contact-intro{
+
+.contact-intro {
     margin: 8px 0 18px 0;
     font-size: 15.5px;
     line-height: 1.6;
@@ -610,7 +578,8 @@ footer {
     flex-direction: column;
     gap: 12px;
 }
-#userQuestion{
+
+#userQuestion {
     width: 100%;
     min-height: 150px;
     padding: 16px;
@@ -622,7 +591,8 @@ footer {
     font-size: 15px;
     line-height: 1.5;
 }
-.send-btn{
+
+.send-btn {
     width: 100%;
     padding: 14px 18px;
     margin-top: 0;
@@ -636,11 +606,13 @@ footer {
     box-shadow: 0 16px 34px rgba(76, 175, 80, .35);
     transition: transform var(--t), box-shadow var(--t);
 }
-.send-btn:hover{
+
+.send-btn:hover {
     transform: translateY(-1px);
     box-shadow: 0 18px 38px rgba(76, 175, 80, .45);
 }
-.contact-block{
+
+.contact-block {
     margin-top: 18px;
     padding: 18px;
     background: rgba(255, 255, 255, .92);
@@ -648,7 +620,8 @@ footer {
     border: 1px solid rgba(76, 175, 80, .22);
     box-shadow: 0 16px 34px rgba(0, 0, 0, .08);
 }
-.contact-block p{
+
+.contact-block p {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -675,7 +648,8 @@ footer {
 .contact-block a:hover {
     text-decoration: underline
 }
-.contact-block .note{
+
+.contact-block .note {
     margin-left: auto;
     padding: 6px 10px;
     border-radius: 999px;
