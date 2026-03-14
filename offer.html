@@ -19,10 +19,11 @@
         <div class="order-form">
             <h2>📦 Passe ta commande</h2>
             <form id="commandeForm">
-                <label>Nom <input type="text" placeholder="Ton nom" required></label>
-                <label>Prénom <input type="text" placeholder="Ton prénom" required></label>
-                <label>Email <input type="email" placeholder="exemple@mail.com" required></label>
-                <label>Adresse <input type="text" placeholder="Ton adresse complète" required></label>
+                <label>Nom <input name="surname" type="text" placeholder="Ton nom" required></label>
+                <label>Prénom <input name="name" type="text" placeholder="Ton prénom" required></label>
+                <label>Email <input name="email" type="email" placeholder="exemple@mail.com" required></label>
+                <label>Numéro de téléphone <input name="phone" type="tel" placeholder="Numéro de téléphone" required></label>
+                <label>Adresse <input name="address" type="text" placeholder="Ton adresse complète" required></label>
 
                 <label>Édition choisie
                     <select id="editionSelect" required>
@@ -123,7 +124,7 @@
     <a href="guide.html" class="button small">📖 Voir le règlement</a>
 </div>
 
-<script src="js/landing.js" defer></script>
+<script src="js/offer.js" defer></script>
 
 </body>
 </html>
