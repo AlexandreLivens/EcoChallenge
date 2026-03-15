@@ -19,10 +19,16 @@
         <div class="order-form">
             <h2>📦 Passe ta commande</h2>
             <form id="commandeForm">
+                <label>Sexe
+                    <select id="sexSelect" required>
+                        <option value="miss">Madame</option>
+                        <option value="sir">Monsieur</option>
+                    </select>
+                </label>
                 <label>Nom <input name="surname" type="text" placeholder="Ton nom" required></label>
                 <label>Prénom <input name="name" type="text" placeholder="Ton prénom" required></label>
-                <label>Email <input name="email" type="email" placeholder="exemple@mail.com" required></label>
-                <label>Numéro de téléphone <input name="phone" type="tel" placeholder="Numéro de téléphone" required></label>
+                <label>Email <input name="email" type="email" placeholder="Ton email" required></label>
+                <label>Numéro de téléphone <input name="phone" type="tel" placeholder="Ton numéro de téléphone" required></label>
                 <label>Adresse <input name="address" type="text" placeholder="Ton adresse complète" required></label>
 
                 <label>Édition choisie
@@ -41,8 +47,6 @@
                     </select>
                 </label>
                 <button type="submit" id="btnPaiement" class="btn-black">Procéder au paiement</button>
-                <button type="button" id="btnPaypal" class="btn-paypal" style="display: none;">Payer avec
-                    <strong>PayPal</strong></button>
             </form>
         </div>
 
