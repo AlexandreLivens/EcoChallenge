@@ -5,9 +5,6 @@
     --primary-color: #2e7d32;
 }
 
-/* =======================
-   RESET & BASE
-======================= */
 * {
     margin: 0;
     padding: 0;
@@ -27,9 +24,6 @@ body {
     min-height: 100vh;
 }
 
-/* =======================
-   BACKGROUND
-======================= */
 .bg {
     position: fixed;
     inset: 0;
@@ -242,9 +236,6 @@ footer {
     font-size: 0.9rem;
 }
 
-/* =======================
-   SCROLLBAR
-======================= */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -254,94 +245,6 @@ footer {
     border-radius: 5px;
 }
 
-/* =======================
-   AIDE
-======================= */
-#helpToggle {
-    position: fixed;
-    bottom: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 18px 36px;
-    font-size: 1.15rem;
-    border-radius: 18px;
-    border: none;
-    background: #2e7d32;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    z-index: 1000;
-}
-
-#helpPanel {
-    position: fixed;
-    inset: 0;
-    background: linear-gradient(135deg, #7fcf87, #9be0a6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transform: scale(0.96);
-    transition: 0.35s ease;
-    z-index: 2000;
-}
-
-#helpPanel.active {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: scale(1);
-}
-
-.help-content {
-    text-align: center;
-    max-width: 620px;
-    padding: 30px;
-}
-
-.help-row {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin: 20px 0;
-}
-
-.help-row input {
-    width: 320px;
-    height: 56px;
-    border-radius: 18px;
-    border: none;
-    padding: 0 18px;
-    font-size: 1rem;
-}
-
-.send-btn {
-    height: 56px;
-    padding: 0 32px;
-    border-radius: 18px;
-    border: none;
-    background: linear-gradient(135deg, #2e7d32, #43a047);
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-#helpClose {
-    position: absolute;
-    top: 18px;
-    right: 22px;
-    background: none;
-    border: none;
-    font-size: 1.4rem;
-    cursor: pointer;
-    color: #1b5e20;
-}
-
-/* =======================
-   MOBILE
-======================= */
 @media screen and (max-width: 768px) {
 
     .eco-challenge-container {
@@ -369,14 +272,6 @@ footer {
         font-size: 1rem;
         text-align: left;
     }
-
-    .help-row {
-        flex-direction: column;
-    }
-
-    .help-row input {
-        width: 100%;
-    }
 }
 
 button,
@@ -398,14 +293,13 @@ button:hover,
     box-shadow: 0 12px 28px rgba(0,0,0,0.35);
 }
 
-/* Boutons verts (versions + jeu vidéo / plateau) */
 .eco-challenge-container a,
 .choice-buttons a,
 .game-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 14px 30px;          /* ⬅️ PLUS GROS */
+    padding: 14px 30px;
     margin: 8px 6px;
     background: linear-gradient(135deg, #2e7d32, #4caf50);
     color: #ffffff !important;
@@ -421,24 +315,18 @@ button:hover,
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     padding: 18px 44px;
     font-size: 1.25rem;
     font-weight: 700;
-
     border-radius: 999px;
     background: linear-gradient(135deg, #2e7d32, #4caf50);
     color: #ffffff !important;
     text-decoration: none;
-
     box-shadow: 0 10px 26px rgba(0,0,0,0.3);
-
-    /* ❌ empêche tout tremblement */
     transform: none !important;
     transition: filter 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Hover propre, SANS bouger */
 .quiz-link:hover {
     filter: brightness(1.08);
     box-shadow: 0 14px 32px rgba(0,0,0,0.35);
@@ -448,112 +336,164 @@ button:hover,
     margin: 20px auto 25px;
 }
 
-/* =========================
-   AIDE – WOW MODERNE 2026
-========================= */
+.creator-section {
+    margin-top: 70px;
+}
 
-#aide {
-    position: fixed;
-    bottom: 90px;
+.creator-text {
+    margin: 10px 0;
+    line-height: 1.6;
+    color: #1b1b1b;
+}
+
+.faq-title {
+    margin-top: 25px;
+}
+
+.faq-item {
+    margin-bottom: 12px;
+}
+
+.faq-question {
+    width: 100%;
+    background: #eef7f1;
+    border: none;
+    padding: 14px 16px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: left;
+    border-radius: 10px;
+    color: #14532d; /* texte visible */
+}
+
+.faq-question:hover {
+    background: #dff0e6;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    background: #fff;
+    border-left: 4px solid #4CAF50;
+    border-radius: 0 0 10px 10px;
+    padding: 0 16px;
+    transition: max-height .25s ease, padding .25s ease;
+    color: #1b1b1b; /* texte visible */
+}
+
+.faq-answer p {
+    margin: 12px 0;
+    color: #1b1b1b;
+}
+
+.faq-item.open .faq-answer {
+    max-height: 400px;
+    padding: 12px 16px;
+}
+
+#mon-parcours p {
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+#mon-parcours {
+    max-width: 960px;
+    margin: 100px auto;
+    padding: 48px 42px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 26px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Halo lumineux */
+#mon-parcours::before {
+    content: "";
+    position: absolute;
+    top: -120px;
     left: 50%;
     transform: translateX(-50%);
+    width: 360px;
+    height: 360px;
+    background: radial-gradient(circle, rgba(76, 175, 80, 0.35), transparent 70%);
+    z-index: 0;
+}
 
-    padding: 20px 52px;
-    font-size: 1.2rem;
+/* Titre */
+#mon-parcours h2 {
+    position: relative;
+    z-index: 1;
+    font-size: 34px;
     font-weight: 800;
-    letter-spacing: 0.5px;
-
-    border-radius: 999px;
-    border: none;
-
-    background: linear-gradient(135deg, #1b5e20, #43a047, #81c784);
-    background-size: 200% 200%;
-
-    color: #ffffff;
-    cursor: pointer;
-
-    box-shadow:
-            0 10px 25px rgba(0,0,0,0.35),
-            0 0 0 0 rgba(129, 199, 132, 0.8);
-
-    animation: aideGlow 2.5s infinite ease-in-out;
-
-    transition: filter 0.25s ease, box-shadow 0.25s ease;
-}
-
-/* Halo vivant */
-@keyframes aideGlow {
-    0% {
-        box-shadow:
-                0 10px 25px rgba(0,0,0,0.35),
-                0 0 0 0 rgba(129, 199, 132, 0.8);
-    }
-    70% {
-        box-shadow:
-                0 12px 30px rgba(0,0,0,0.4),
-                0 0 0 14px rgba(129, 199, 132, 0);
-    }
-    100% {
-        box-shadow:
-                0 10px 25px rgba(0,0,0,0.35),
-                0 0 0 0 rgba(129, 199, 132, 0);
-    }
-}
-
-/* Hover clean */
-#aide:hover {
-    filter: brightness(1.12);
-}
-
-/* =========================
-   AIDE – POSITION FIGÉE
-========================= */
-
-#aide {
-    position: fixed;
-    bottom: 46px;              /* position définitive */
-    left: 50%;
-
-    /* 🔒 BLOQUAGE TOTAL */
-    transform: translateX(-50%) !important;
-    transition: none !important;
-    animation: none !important;
-
-    padding: 9px 22px;
-    font-size: 0.9rem;
-    font-weight: 700;
-
-    border-radius: 14px;
-    border: 2px solid #ffffff;
-
-    background: #2e7d32;
-    color: #ffffff;
-
-    box-shadow:
-            0 6px 16px rgba(0,0,0,0.28),
-            0 0 0 3px rgba(129,199,132,0.45);
-
-    cursor: pointer;
-    z-index: 1000;
-}
-
-/* 🔒 AUCUN DÉPLACEMENT, JAMAIS */
-#aide:hover,
-#aide:active,
-#aide:focus {
-    transform: translateX(-50%) !important;
-    transition: none !important;
-    animation: none !important;
-
-    background: #2e7d32;
-}
-
-
-#helpPanel {
+    color: #1b5e20;
+    margin-bottom: 32px;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
 }
 
-#helpPanel:not(.active) {
-    pointer-events: none;
+/* Texte */
+#mon-parcours p {
+    position: relative;
+    z-index: 1;
+    font-size: 17px;
+    line-height: 1.85;
+    color: #1f2933;
+    margin-bottom: 20px;
 }
 
+/* Mots clés */
+#mon-parcours strong {
+    color: #2e7d32;
+    font-weight: 700;
+}
+
+/* Ligne élégante de séparation */
+#mon-parcours p:not(:last-child)::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #4CAF50, #81C784);
+    margin: 22px auto 0;
+    border-radius: 999px;
+    opacity: 0.6;
+}
+
+/* Animation entrée */
+#mon-parcours {
+    animation: wowFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes wowFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    #mon-parcours {
+        margin: 60px 16px;
+        padding: 32px 24px;
+    }
+
+    #mon-parcours h2 {
+        font-size: 26px;
+    }
+
+    #mon-parcours p {
+        font-size: 15.8px;
+    }
+}
