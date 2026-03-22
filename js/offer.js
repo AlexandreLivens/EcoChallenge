@@ -92,14 +92,15 @@ function initializeOrderForm() {
             name: document.querySelector('input[name="name"]').value,
             email: document.querySelector('input[name="email"]').value,
             phone: document.querySelector('input[name="phone"]').value,
-            address: document.querySelector('input[name="address"]').value,
+            country: document.querySelector('input[name="counrty"]').value,
+            city: document.querySelector('input[name="city"]').value,
             edition: editionSelect.selectedOptions[0].text,
             paiement: paymentSelect.selectedOptions[0].text,
         };
 
         console.log(data)
 
-        fetch('https://script.google.com/macros/s/AKfycbzW8VpMuc2V4wvBlZi37tDdam3R0HNf7k4M4qFF-mVSN1JOg4ZPBchhidsC8RonzQi9/exec', {
+        fetch('https://script.google.com/macros/s/AKfycbxi-9z0-K3OI4R_2QCl0-UET4zY-8W4dQFAENH1hDnF8s4Op3JgVlxNwS9atN3dn-0/execC', {
             method: 'POST',
             mode: 'no-cors',  // Добавить эту строку
             body: JSON.stringify(data)

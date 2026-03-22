@@ -19,19 +19,42 @@
         <div class="order-form">
             <h2>📦 Passe ta commande</h2>
             <form id="commandeForm">
-                <label>Sexe
+                <label for="sexSelect">
+                    Sexe
                     <select id="sexSelect" required>
                         <option value="miss">Madame</option>
                         <option value="sir">Monsieur</option>
                     </select>
                 </label>
-                <label>Nom <input name="surname" type="text" placeholder="Ton nom" required></label>
-                <label>Prénom <input name="name" type="text" placeholder="Ton prénom" required></label>
-                <label>Email <input name="email" type="email" placeholder="Ton email" required></label>
-                <label>Numéro de téléphone <input name="phone" type="tel" placeholder="Ton numéro de téléphone" required></label>
-                <label>Adresse <input name="address" type="text" placeholder="Ton adresse complète" required></label>
+                <label for="surname">
+                    Nom
+                    <input id="surname" name="surname" type="text" placeholder="Votre nom" required>
+                </label>
+                <label for="name">
+                    Prénom
+                    <input id="name" name="name" type="text" placeholder="Votre prénom" required>
+                </label>
+                <label for="email">
+                    Email
+                    <input id="email" name="email" type="email" placeholder="Votre email" required>
+                </label>
+                <label for="phone">
+                    Numéro de téléphone
+                    <input id="phone" name="phone" type="tel" placeholder="Votre numéro de téléphone" required>
+                </label>
+                <label for="country">
+                    Pays
+                    <input id="country" name="country" type="text" placeholder="Votre pays" autocomplete="country-name"
+                           required>
+                </label>
+                <label for="city">
+                    Ville
+                    <input id="city" name="city" type="text" placeholder="Votre ville" autocomplete="address-level2"
+                           required>
+                </label>
 
-                <label>Édition choisie
+                <label for="editionSelect">
+                    Édition choisie
                     <select id="editionSelect" required>
                         <option value="complete">Édition Complète</option>
                         <option value="classique">Édition Classique</option>
@@ -39,7 +62,8 @@
                     </select>
                 </label>
 
-                <label>Moyen de paiement
+                <label for="paiementSelect">
+                    Moyen de paiement
                     <select id="paiementSelect" required>
                         <option value="carte">Carte Bancaire</option>
                         <option value="paypal">PayPal</option>
@@ -54,7 +78,7 @@
             <h3>🧾 Récapitulatif</h3>
             <ul>
                 <li><span>Sous-total</span><strong id="sousTotal">35,00€</strong></li>
-                <li><span>Livraison</span><strong id="livraison">Offerte</strong></li>
+                <li><span>Livraison</span><strong id="livraison">Dépend de l'adresse</strong></li>
                 <li class="total"><span>Total</span><strong id="total">35,00€</strong></li>
             </ul>
             <p class="note">📦 Livraison en 2-4 jours. Retrait possible.</p>
