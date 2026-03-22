@@ -92,7 +92,7 @@ function initializeOrderForm() {
             name: document.querySelector('input[name="name"]').value,
             email: document.querySelector('input[name="email"]').value,
             phone: document.querySelector('input[name="phone"]').value,
-            country: document.querySelector('input[name="counrty"]').value,
+            country: document.querySelector('input[name="country"]').value,
             city: document.querySelector('input[name="city"]').value,
             edition: editionSelect.selectedOptions[0].text,
             paiement: paymentSelect.selectedOptions[0].text,
