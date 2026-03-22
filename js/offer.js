@@ -100,7 +100,7 @@ function initializeOrderForm() {
 
         console.log(data)
 
-        fetch('https://script.google.com/macros/s/AKfycbxi-9z0-K3OI4R_2QCl0-UET4zY-8W4dQFAENH1hDnF8s4Op3JgVlxNwS9atN3dn-0/execC', {
+        fetch('https://script.google.com/macros/s/AKfycbwnz7xK8XQyb0YYs8o_b51B77wHIc1hkERTkbsDQ0CrYVuWlNo6jXYpDOyMo1i-u6_2/exec', {
             method: 'POST',
             mode: 'no-cors',  // Добавить эту строку
             body: JSON.stringify(data)
