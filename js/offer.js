@@ -1,50 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    initializeContactPanel();
     initializeOrderForm();
 });
-
-function initializeContactPanel() {
-    const contactButton = document.getElementById("contactBtn");
-    const contactPanel = document.getElementById("contactPanel");
-    const closeButton = document.getElementById("contactClose");
-
-    if (!contactButton || !contactPanel || !closeButton) return;
-
-    const openPanel = () => {
-        contactPanel.style.display = "block";
-    };
-
-    const closePanel = () => {
-        contactPanel.style.display = "none";
-    };
-
-    contactButton.addEventListener("click", (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        openPanel();
-    });
-
-    closeButton.addEventListener("click", (event) => {
-        event.preventDefault();
-        closePanel();
-    });
-
-    document.addEventListener("click", (event) => {
-        const clickedOutsidePanel =
-            !contactPanel.contains(event.target) &&
-            event.target !== contactButton;
-
-        if (contactPanel.style.display === "block" && clickedOutsidePanel) {
-            closePanel();
-        }
-    });
-
-    document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") {
-            closePanel();
-        }
-    });
-}
 
 function initializeOrderForm() {
     const sexSelect = document.getElementById("sexSelect");
