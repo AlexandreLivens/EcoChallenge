@@ -9,11 +9,38 @@
     <link type="image/png" rel="icon" href="assets/images/favicon.png">
 </head>
 <body>
-<!-- FX canvas (feuilles / neige / pétales / sable) -->
+
+<header>
+    <a href="#home" id="logo-link" title="Éco-Challenge site principale">
+        <div class="logo"></div>
+        <span class="logo-text">Éco-Challenge</span>
+    </a>
+
+    <div class="header-contacts">
+        <a href="tel:+33 6 92 33 77" class="contact-phone">+33 6 92 33 77</a>
+        <div class="contact-buttons">
+            <a href="" class="social-link whatsapp" target="_blank" title="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="" class="social-link telegram" target="_blank" title="Telegram">
+                <i class="fab fa-telegram-plane"></i>
+            </a>
+        </div>
+    </div>
+
+    <button id="open-menu-btn"></button>
+    <nav class="menu">
+        <a class="menu-item" href="#about">О школе</a>
+        <a class="menu-item" href="#courses">Курсы</a>
+        <a class="menu-item" href="#faq">Вопросы</a>
+        <a class="menu-item" href="#apply">Контакты</a>
+    </nav>
+</header>
+
 <canvas id="fx" aria-hidden="true"></canvas>
 
 <main class="main" role="main">
-    <!-- Toolbar (langue / thème / saison / son / règles) -->
+
     <div class="toolbar">
         <div class="group">
             <select id="langSel" class="sel" aria-label="Langue">
@@ -27,13 +54,11 @@
                 <option value="automne">🍂 Automne</option>
                 <option value="hiver">❄️ Hiver</option>
             </select>
-            <button class="mini-btn" id="soundToggle" type="button">🔊</button>
         </div>
         <button class="mini-btn" id="btnRulesQuick" type="button">📜 Règles</button>
     </div>
 
-    <!-- Header avec éolienne SVG -->
-    <header class="head" aria-label="Logo Éco‑Challenge">
+    <div class="head" aria-label="Logo Éco‑Challenge">
         <svg class="logo-svg" viewBox="0 0 100 100" aria-hidden="true">
             <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="2"/>
             <rect x="48" y="42" width="4" height="36" rx="2" fill="#dcefe8"/>
@@ -46,7 +71,7 @@
             </g>
         </svg>
         <div class="logoWord" id="logoWord">ÉCO‑CHALLENGE</div>
-    </header>
+    </div>
 
     <p class="tag" id="tagline">Clique sur <strong>Départ</strong> puis choisis joueurs, pseudos et robot ♻️</p>
 
@@ -70,7 +95,7 @@
     </div>
 
     <section class="wizard" id="wizard" aria-label="Configuration de la partie">
-        <!-- Step 1 -->
+
         <div class="screen active" data-step="1">
             <label for="players" id="lblPlayers">Combien de joueurs ?</label>
             <select id="players" class="selIn" required>
@@ -84,7 +109,7 @@
                 <button class="btn" id="toStep2" type="button">Suivant →</button>
             </div>
         </div>
-        <!-- Step 2 -->
+
         <div class="screen" data-step="2">
             <div class="players-box" id="playersBox"></div>
             <div class="err" id="errNames">Entre tous les pseudos pour continuer.</div>
@@ -93,7 +118,7 @@
                 <button class="btn" id="toStep3" type="button">Suivant →</button>
             </div>
         </div>
-        <!-- Step 3 -->
+
         <div class="screen" data-step="3">
             <label for="bot" id="lblBot">Ajouter un robot ?</label>
             <select id="bot" class="selIn">
@@ -111,7 +136,6 @@
     </section>
 </main>
 
-<!-- Modal règles (garde en secours si pas de lien externe) -->
 <div class="modal" id="modal">
     <div class="modal-card">
         <h3 id="modalTitle">Règles en bref</h3>

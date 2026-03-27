@@ -162,146 +162,6 @@ const fx = (() => {
     return {setMode};
 })();
 
-/* ======= AUDIO (fichiers + fallback rapide) ======= */
-const audio = {ctx: null, enabled: true, nodes: {}, tag: null};
-const soundFiles = { // ➜ place tes vrais .mp3 si tu veux
-    printemps: ['assets/audio/oiseaux.mp3'],
-    ete: ['assets/audio/vagues.mp3', 'assets/audio/cigales.mp3'],
-    automne: ['assets/audio/vent.mp3', 'assets/audio/feuilles.mp3'],
-    hiver: ['assets/audio/clochettes.mp3', 'assets/audio/ventfroid.mp3']
-};
-
-function ensureCtx() {
-    if (!audio.ctx) audio.ctx = new (window.AudioContext || window.webkitAudioContext)();
-}
-
-function stopAmb() {
-    const n = audio.nodes;
-    if (n.srcs) {
-        n.srcs.forEach(a => {
-            try {
-                a.pause()
-            } catch (e) {
-            }
-        });
-    }
-    if (n.master) {
-        try {
-            n.master.disconnect()
-        } catch (e) {
-        }
-    }
-    if (n.timer) {
-        clearTimeout(n.timer);
-    }
-    audio.nodes = {};
-}
-
-function tryPlay(url, vol) {
-    return new Promise((res) => {
-        const a = new Audio(url);
-        a.loop = true;
-        a.volume = vol;
-        a.addEventListener('canplaythrough', () => {
-            a.play().then(() => res(a)).catch(() => res(null));
-        }, {once: true});
-        a.addEventListener('error', () => res(null), {once: true});
-        setTimeout(() => res(null), 900); /* timeout fallback */
-        a.load();
-    });
-}
-
-async function playFiles(urls) {
-    ensureCtx();
-    stopAmb();
-    const srcs = [];
-    for (let i = 0; i < urls.length; i++) {
-        const r = await tryPlay(urls[i], i === 0 ? 0.7 : 0.35);
-        if (r) srcs.push(r);
-    }
-    if (srcs.length) {
-        audio.nodes.srcs = srcs;
-    } else {
-        playFallbackNoise();
-    }
-}
-
-function playFallbackNoise(freq = 900) {
-    ensureCtx();
-    const ac = audio.ctx;
-    const n = ac.createBufferSource();
-    const bf = ac.createBuffer(1, ac.sampleRate * 1.5, ac.sampleRate);
-    const d = bf.getChannelData(0);
-    for (let i = 0; i < d.length; i++) {
-        d[i] = (Math.random() * 2 - 1);
-    }
-    const flt = ac.createBiquadFilter();
-    flt.type = 'lowpass';
-    flt.frequency.value = freq;
-    const g = ac.createGain();
-    g.gain.value = 0.035;
-    n.buffer = bf;
-    n.loop = true;
-    n.connect(flt).connect(g).connect(ac.destination);
-    n.start();
-    audio.nodes.src = n;
-}
-
-function setSeasonAudio(season) {
-    if (!audio.enabled) return stopAmb();
-    const urls = soundFiles[season];
-    if (urls && urls.length) {
-        playFiles(urls);
-    } else {
-        const map = {ete: 600, automne: 1000, printemps: 1200, hiver: 700};
-        playFallbackNoise(map[season] || 900);
-    }
-}
-
-function unlockAudio() {
-    ensureCtx();
-    ['touchstart', 'pointerdown', 'keydown'].forEach(ev => {
-        window.addEventListener(ev, () => {
-            if (audio.ctx && audio.ctx.state === 'suspended') {
-                audio.ctx.resume();
-            }
-        }, {once: true});
-    });
-}
-
-unlockAudio();
-
-function beep() {
-    if (!audio.enabled) return;
-    try {
-        ensureCtx();
-        const o = audio.ctx.createOscillator();
-        const g = audio.ctx.createGain();
-        o.type = 'sine';
-        o.frequency.value = 720;
-        g.gain.setValueAtTime(0.001, audio.ctx.currentTime);
-        g.gain.exponentialRampToValueAtTime(0.08, audio.ctx.currentTime + 0.01);
-        g.gain.exponentialRampToValueAtTime(0.001, audio.ctx.currentTime + 0.12);
-        o.connect(g).connect(audio.ctx.destination);
-        o.start();
-        o.stop(audio.ctx.currentTime + 0.13);
-    } catch (e) {
-    }
-}
-
-$('#soundToggle').addEventListener('click', () => {
-    audio.enabled = !audio.enabled;
-    $('#soundToggle').textContent = audio.enabled ? '🔊' : '🔇';
-    $('#soundToggle').setAttribute('aria-pressed', audio.enabled ? 'true' : 'false');
-    if (audio.enabled) {
-        setSeasonAudio($('#seasonSel').value);
-    } else {
-        stopAmb();
-    }
-    beep();
-});
-
-/* ======= I18N ======= */
 const i18n = {
     fr: {
         start: 'DÉPART', resume: 'REPRENDRE', next: 'Suivant →', back: '← Retour', launch: 'Lancer la partie ▶️',
@@ -348,7 +208,6 @@ function setLang(lang) {
     $('#fullRulesLink').textContent = t.fullRules;
 }
 
-/* ======= STATE / PREFS ======= */
 const SAVE_KEY = 'eco_save_v7';
 
 function detectSeasonByMonth(m) {
@@ -386,7 +245,6 @@ function detectSeasonByMonth(m) {
     });
 })();
 
-/* ======= RÈGLES ======= */
 const FULL_RULES_URL = "guide.html";
 if (FULL_RULES_URL) {
     const L = $('#fullRulesLink');
@@ -401,7 +259,6 @@ on($('#btnRulesQuick'), 'click', () => {
     }
 });
 
-/* ======= WIZARD LOGIC ======= */
 const stepper = $('#stepper'), progress = $('#progress'), bar = $('#bar');
 const screens = [...document.querySelectorAll('.screen')];
 const dots = [$('#d1'), $('#d2'), $('#d3')];
@@ -530,12 +387,10 @@ on($('#launch'), 'click', () => {
 });
 
 
-/* ======= MODAL close ======= */
 on($('#modalClose'), 'click', () => {
     $('#modal').classList.remove('open');
 });
 
-/* ======= CONFETTI ======= */
 function confetti() {
     const c = $('#fx');
     if (!c) return;
