@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap');
+
+a {
+    text-decoration: none;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    min-height: 78px;
+    padding: 12px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    z-index: 1000;
+    background: rgba(22, 51, 33, 0.72);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 0 0 22px 22px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    font-family: "Jost", sans-serif;
+}
+
+#logo-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.logo {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
+}
+
+.logo-text {
+    color: #ffffff;
+    font-size: clamp(1.15rem, 1.8vw, 1.7rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.menu-item {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.94);
+    font-size: clamp(0.95rem, 1.15vw, 1.08rem);
+    font-weight: 500;
+    padding: 10px 16px;
+    border-radius: 999px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.menu-item:hover {
+    color: #163321;
+    background: linear-gradient(135deg, #9cf0b0, #71df90);
+    box-shadow: 0 8px 18px rgba(113, 223, 144, 0.28);
+    transform: translateY(-1px);
+}
+
+.menu-item:active {
+    transform: translateY(0);
+}
+
+.header-contacts {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0 20px;
+    color: black;
+}
+
+.contact-phone {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 8px;
+    align-items: center !important;
+    margin: 0;
+}
+
+.socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.socials a {
+    width: 44px;
+    height: 44px;
+    background: #3a3a3a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 18px;
+    transition: 0.3s ease;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+.socials a:hover {
+    transform: translateY(-4px) scale(1.08);
+}
+
+/* Couleurs au survol */
+.socials a:nth-child(1):hover {
+    background: #25D366;
+    color: #fff;
+}
+
+.socials a:nth-child(2):hover {
+    background: #EA4335;
+    color: #fff;
+}
+
+.socials a:nth-child(3):hover {
+    background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);
+    color: #fff;
+}
+
+.socials a:nth-child(4):hover {
+    background: #000000;
+    color: #fff;
+}
+
+.socials a:nth-child(5):hover {
+    background: #FF0000;
+    color: #fff;
+}
+
+.socials a:nth-child(6):hover {
+    background: #0A66C2;
+    color: #fff;
+}
+
+.socials a:nth-child(7):hover {
+    background: #229ED9;
+    color: #fff;
+}
+
+.socials a:nth-child(8):hover {
+    background: #1877F2;
+    color: #fff;
+}
