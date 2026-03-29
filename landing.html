@@ -10,6 +10,111 @@
 </head>
 <body>
 
+<div id="authOverlay" class="auth-overlay">
+    <div class="auth-box">
+        <div class="auth-header">
+            <h2>🌱 Bienvenue sur Éco-Challenge</h2>
+            <p>Connecte-toi à ton compte ou crée-en un pour continuer.</p>
+        </div>
+
+        <div class="auth-tabs">
+            <button type="button" class="auth-tab active" id="loginTab">Se connecter</button>
+            <button type="button" class="auth-tab" id="registerTab">Créer un compte</button>
+        </div>
+
+        <form id="loginForm" class="auth-form active">
+            <label for="loginEmail">
+                Adresse e-mail
+                <input id="loginEmail" type="email" placeholder="Votre email" required>
+            </label>
+
+            <label for="loginPassword">
+                Mot de passe
+                <div class="password-field">
+                    <input id="loginPassword" type="password" placeholder="Votre mot de passe" required>
+                    <span class="toggle-password" data-target="loginPassword">🙈️</span>
+                </div>
+            </label>
+
+            <button type="submit" class="auth-main-btn">Se connecter</button>
+        </form>
+
+        <form class="auth-form" id="registerForm">
+            <label for="registerLastName">
+                Nom de famille
+                <input id="registerLastName" type="text" placeholder="Votre nom de famille" required>
+            </label>
+
+            <label for="registerFirstName">
+                Prénom
+                <input id="registerFirstName" type="text" placeholder="Votre prénom" required>
+            </label>
+
+            <label for="registerSex">
+                Sexe
+                <select id="registerSex" required>
+                    <option value="">Choisir</option>
+                    <option value="male">Homme</option>
+                    <option value="female">Femme</option>
+                </select>
+            </label>
+
+            <label for="registerBirthdate">
+                Date de naissance
+                <input id="registerBirthdate" type="date" lang="fr" required>
+            </label>
+
+            <label for="registerEmail">
+                Adresse e-mail
+                <input id="registerEmail" type="email" placeholder="Votre email" required>
+            </label>
+
+            <label for="registerPassword">
+                Mot de passe
+                <div class="password-field">
+                    <input id="registerPassword" type="password" placeholder="Choisissez un mot de passe" required>
+                    <span class="toggle-password" data-target="registerPassword">️🙈</span>
+                </div>
+            </label>
+
+            <label for="registerPasswordConfirm">
+                Confirmer le mot de passe
+                <div class="password-field">
+                    <input id="registerPasswordConfirm" type="password" placeholder="Confirmez votre mot de passe" required>
+                    <span class="toggle-password" data-target="registerPasswordConfirm">️🙈</span>
+                </div>
+            </label>
+
+            <label class="checkbox">
+                <input type="checkbox" id="parentConsent" required>
+                <span>J’ai au moins 13 ans et j’ai l’accord de mes parents</span>
+            </label>
+
+            <label class="checkbox">
+                <input type="checkbox" required>
+                <span>J’accepte que mes données soient utilisées pour le traitement de ma commande</span>
+            </label>
+
+            <label class="checkbox">
+                <input type="checkbox" id="robotCheck" required>
+                <span>Je ne suis pas un robot</span>
+            </label>
+            <h2>Politique de confidentialité</h2>
+            <p>
+                Les données collectées sont utilisées uniquement pour traiter les commandes.
+                Elles ne sont jamais vendues ni partagées.
+                Vous pouvez demander leur suppression à tout moment.
+            </p>
+
+            <button type="submit" class="auth-main-btn">Créer mon compte</button>
+        </form>
+
+        <button type="button" id="continueGuest" class="auth-secondary-btn">
+            Continuer sans compte
+        </button>
+    </div>
+</div>
+
 <header class="hero">
     <img src="assets/images/landing/eco-challenge-version-prix.png" alt="Éco-Challenge" class="hero-img">
 </header>
@@ -24,15 +129,12 @@
             <li>💰 Jetons : 💰, ⭐, 🌱</li>
             <li>🎲 1 dé + pions inclus</li>
             <li>📱 QR code pour les règles</li>
-            <li>📦 Boîte Éco‑Challenge</li>
+            <li>📦 Boîte Éco-Challenge</li>
             <li>🧠 Quiz inclus</li>
             <li>🎁 2 cadeaux mystère</li>
         </ul>
         <div class="tagline">✅ Idéal pour jouer directement entre amis ou en famille !</div>
-        <a href="offer.html"
-           class="button"
-           onclick="showOrderForm(this)"
-           data-version="Édition Complète">
+        <a href="offer.html" class="button" data-version="Édition Complète">
             🛒 Commander cette version
         </a>
     </section>
@@ -49,11 +151,7 @@
             <li>❌ Sans dés ni pions</li>
         </ul>
         <div class="tagline">♻️ Parfait si tu as déjà du matériel !</div>
-        <a href="offer.html"
-           class="button"
-           onclick="function showOrderForm(param) {}
-           showOrderForm(this)"
-           data-version="Édition Complète">
+        <a href="offer.html" class="button" data-version="Édition Essentielle">
             🛒 Commander cette version
         </a>
     </section>
@@ -68,10 +166,7 @@
             <li>🧠 Quiz inclus</li>
         </ul>
         <div class="tagline">✅ Idéal pour les écoles ou usage économique.</div>
-        <a href="offer.html"
-           class="button"
-           onclick="showOrderForm(this)"
-           data-version="Édition Complète">
+        <a href="offer.html" class="button" data-version="Édition Imprimable">
             🛒 Commander cette version
         </a>
     </section>
@@ -119,7 +214,6 @@
             </div>
         </div>
     </section>
-
 </main>
 
 <footer>
@@ -127,7 +221,7 @@
 </footer>
 
 <div id="contactPanel">
-    <button id="contactClose">✖</button>
+    <button id="contactClose" type="button">✖</button>
     <p class="contact-intro">
         <strong>Bonjour, ici Eco-Challenge 🌱</strong><br>
         Vous pouvez nous écrire pour toute question ou demande d’assistance.
