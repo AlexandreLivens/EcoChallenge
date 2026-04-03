@@ -32,10 +32,11 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background:
-            radial-gradient(circle at top left, rgba(111, 207, 151, 0.18), transparent 30%),
-            radial-gradient(circle at top right, rgba(255, 215, 106, 0.16), transparent 30%),
-            linear-gradient(180deg, #f7fff8 0%, #eef9f1 100%);
+    background-attachment: fixed;
+    background-image: url(../../assets/images/game/bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     color: var(--text);
     line-height: 1.7;
     padding: 30px 16px 120px;
@@ -89,7 +90,7 @@ footer {
 
 .eco-challenge-container {
     width: min(1100px, 100%);
-    margin: 0 auto 40px;
+    margin: 8vh auto 40px;
     background: rgba(255, 255, 255, 0.88);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(191, 232, 202, 0.9);
