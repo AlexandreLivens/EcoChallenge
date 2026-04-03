@@ -87,7 +87,6 @@ footer {
     color: #12311f;
 }
 
-/* CONTENEUR PRINCIPAL */
 .eco-challenge-container {
     width: min(1100px, 100%);
     margin: 0 auto 40px;
@@ -142,7 +141,6 @@ footer {
     color: var(--green-dark);
 }
 
-/* SECTION GAME INFO */
 .game-info {
     margin-top: 32px;
     background: linear-gradient(180deg, #ffffff 0%, #f6fff8 100%);
@@ -185,7 +183,6 @@ h2#pourquoi::before {
     border-radius: 999px;
 }
 
-/* ETAPES */
 .game-steps {
     display: grid;
     gap: 14px;
@@ -258,7 +255,6 @@ h2#pourquoi::before {
     font-weight: 700;
 }
 
-/* CARTES / BLOCS */
 .les-cases-du-jeu {
     width: min(1100px, 100%);
     margin: 0 auto 24px;
@@ -301,7 +297,6 @@ h2#pourquoi::before {
     text-align: center;
 }
 
-/* IMAGES */
 .les-cases-du-jeu li img {
     width: min(100%, 340px);
     margin: 18px 12px 0 0;
@@ -314,7 +309,6 @@ h2#pourquoi::before {
     padding: 6px;
 }
 
-/* BLOCS APRES TITRES */
 #maire + .les-cases-du-jeu,
 #regles + p,
 #regles + p + .les-cases-du-jeu,
@@ -327,7 +321,6 @@ h2#pourquoi::before {
     margin-right: auto;
 }
 
-/* PARAGRAPHES EN BLOCS */
 #regles + p,
 #victoire + p,
 #victoire + p + ul + p,
@@ -341,7 +334,6 @@ h2#pourquoi::before {
     color: var(--text);
 }
 
-/* POURQUOI JOUER */
 #pourquoi + .eco-challenge-container {
     list-style: none;
     display: grid;
@@ -376,7 +368,6 @@ h2#pourquoi::before {
     justify-content: center;
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
     body {
         padding: 18px 12px 110px;
@@ -402,6 +393,11 @@ h2#pourquoi::before {
     #pourquoi + .eco-challenge-container li::before {
         left: 16px;
         top: 16px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
     }
 }
 
@@ -431,10 +427,11 @@ h2#pourquoi::before {
 .footer-column h3::after {
     content: "";
     display: block;
-    width: 30px;
+    width: 38px;
     height: 2px;
     background: #8fffd2;
-    margin-top: 6px;
+    margin-top: 8px;
+    border-radius: 999px;
 }
 
 .footer-column p,
@@ -450,29 +447,6 @@ h2#pourquoi::before {
     color: #8fffd2;
 }
 
-.socials {
-    display: flex;
-    gap: 12px;
-    margin-top: 10px;
-}
-
-.socials a {
-    width: 40px;
-    height: 40px;
-    background: #3a3a3a;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    transition: 0.3s;
-}
-
-.socials a:hover {
-    background: #8fffd2;
-    color: #1a1a1a;
-}
-
 .footer-bottom {
     text-align: center;
     margin-top: 40px;
@@ -481,87 +455,3 @@ h2#pourquoi::before {
     font-size: 0.9rem;
     color: #888;
 }
-
-.footer-column h3 {
-    color: #8fffd2;
-    margin-bottom: 14px;
-    font-size: 1.1rem;
-    position: relative;
-}
-
-.footer-column h3::after {
-    content: "";
-    display: block;
-    width: 38px;
-    height: 2px;
-    background: #8fffd2;
-    margin-top: 8px;
-    border-radius: 999px;
-}
-
-.socials {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 14px;
-}
-
-.socials a {
-    width: 44px;
-    height: 44px;
-    background: #3a3a3a;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    font-size: 18px;
-    transition: 0.3s ease;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
-}
-
-.socials a:hover {
-    transform: translateY(-4px) scale(1.08);
-}
-
-/* Couleurs au survol */
-.socials a:nth-child(1):hover {
-    background: #25D366;
-    color: #fff;
-}
-
-.socials a:nth-child(2):hover {
-    background: #EA4335;
-    color: #fff;
-}
-
-.socials a:nth-child(3):hover {
-    background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);
-    color: #fff;
-}
-
-.socials a:nth-child(4):hover {
-    background: #000000;
-    color: #fff;
-}
-
-.socials a:nth-child(5):hover {
-    background: #FF0000;
-    color: #fff;
-}
-
-.socials a:nth-child(6):hover {
-    background: #0A66C2;
-    color: #fff;
-}
-
-.socials a:nth-child(7):hover {
-    background: #229ED9;
-    color: #fff;
-}
-
-.socials a:nth-child(8):hover {
-    background: #1877F2;
-    color: #fff;
-}
-
