@@ -85,27 +85,33 @@
                 </div>
             </label>
 
-            <label class="checkbox">
-                <input type="checkbox" id="parentConsent" required>
-                <span>J’ai au moins 13 ans et j’ai l’accord de mes parents</span>
+            <label class="consent-item">
+                    <input type="checkbox" id="ageConsent" name="ageConsent" required>
+                    <span>
+        Je confirme avoir au moins 15 ans ou disposer de l’accord de mes représentants légaux,
+        conformément à la réglementation en vigueur
+        (<a href="https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000037085952/" target="_blank" rel="noopener noreferrer">
+        </a>).
+    </span>
+                </label>
+
+            <label class="consent-item">
+                <input type="checkbox" id="privacyConsent" name="privacyConsent" required>
+                <span>
+      J’ai lu et j’accepte la
+      <a href="/politique-confidentialite.html" target="_blank" rel="noopener noreferrer">politique de confidentialité</a>.
+    </span>
             </label>
 
-            <label class="checkbox">
-                <input type="checkbox" required>
-                <span>J’accepte que mes données soient utilisées pour le traitement de ma commande</span>
+            <label class="consent-item">
+                <input type="checkbox" id="termsConsent" name="termsConsent" required>
+                <span>
+      J’ai lu et j’accepte les
+      <a href="/cgv.html" target="_blank" rel="noopener noreferrer">Conditions Générales de Vente</a>
+      ainsi que les
+      <a href="/mentions-legales.html" target="_blank" rel="noopener noreferrer">mentions légales</a>.
+    </span>
             </label>
-
-            <label class="checkbox">
-                <input type="checkbox" id="robotCheck" required>
-                <span>Je ne suis pas un robot</span>
-            </label>
-            <h2>Politique de confidentialité</h2>
-            <p>
-                Les données collectées sont utilisées uniquement pour traiter les commandes.
-                Elles ne sont jamais vendues ni partagées.
-                Vous pouvez demander leur suppression à tout moment.
-            </p>
-
             <button type="submit" class="auth-main-btn">Créer mon compte</button>
         </form>
 
