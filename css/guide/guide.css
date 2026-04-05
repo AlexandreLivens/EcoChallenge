@@ -39,6 +39,9 @@ body {
     background-size: cover;
     color: var(--text);
     line-height: 1.7;
+}
+
+main {
     padding: 30px 16px 120px;
 }
 
@@ -73,14 +76,6 @@ a:hover {
 
 strong {
     color: var(--text);
-}
-
-footer {
-    text-align: center;
-    margin-top: 60px;
-    padding: 24px 10px;
-    color: var(--text-light);
-    font-size: 0.95rem;
 }
 
 ::selection {
@@ -367,92 +362,4 @@ h2#pourquoi::before {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-@media (max-width: 768px) {
-    body {
-        padding: 18px 12px 110px;
-    }
-
-    .eco-challenge-container,
-    .game-info,
-    .les-cases-du-jeu li,
-    #pourquoi + .eco-challenge-container {
-        padding: 20px 16px;
-    }
-
-    .les-cases-du-jeu li img {
-        display: block;
-        width: 100%;
-        margin: 14px 0 0;
-    }
-
-    #pourquoi + .eco-challenge-container li {
-        padding-left: 46px;
-    }
-
-    #pourquoi + .eco-challenge-container li::before {
-        left: 16px;
-        top: 16px;
-    }
-
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
-}
-
-.footer {
-    background: #2b2b2b;
-    color: #ccc;
-    margin-top: 80px;
-    padding: 50px 20px 20px;
-    border-top: 1px solid rgba(255,255,255,0.05);
-}
-
-.footer-container {
-    max-width: 1100px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-}
-
-.footer-column h3 {
-    color: #8fffd2;
-    margin-bottom: 14px;
-    font-size: 1.1rem;
-    position: relative;
-}
-
-.footer-column h3::after {
-    content: "";
-    display: block;
-    width: 38px;
-    height: 2px;
-    background: #8fffd2;
-    margin-top: 8px;
-    border-radius: 999px;
-}
-
-.footer-column p,
-.footer-column a {
-    display: block;
-    color: #aaa;
-    font-size: 0.95rem;
-    margin-bottom: 8px;
-    transition: 0.2s;
-}
-
-.footer-column a:hover {
-    color: #8fffd2;
-}
-
-.footer-bottom {
-    text-align: center;
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    font-size: 0.9rem;
-    color: #888;
 }
