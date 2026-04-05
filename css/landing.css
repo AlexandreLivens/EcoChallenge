@@ -31,7 +31,11 @@ html {
 body {
     margin: 0;
     font-family: Poppins, system-ui, Arial, sans-serif;
-    background: linear-gradient(to bottom right, var(--eco-cream), var(--eco-sky));
+    background-attachment: fixed;
+    background-image: url(../assets/images/game/bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     color: var(--text);
     min-height: 100vh;
 }
@@ -141,7 +145,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 main {
-    margin: 50px auto;
+    margin: 12vh auto;
     padding: 0 20px;
 }
 

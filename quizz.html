@@ -8,113 +8,142 @@
     <title>Quiz Écologique - Niveau Facile</title>
     <link rel="stylesheet" href="css/guide/general.css">
     <link rel="stylesheet" href="css/guide/quizz.css">
+    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
+<header>
+    <a href="index.html" id="logo-link" title="Éco-Challenge site principal">
+        <img src="assets/images/favicon.png" class="logo" alt="Logo Éco-Challenge">
+        <span class="logo-text">Éco-Challenge</span>
+    </a>
+
+    <div class="header-contacts">
+        <a href="tel:+33 6 19 92 33 77" class="contact-phone">+33 6 19 92 33 77</a>
+        <div class="socials contact-buttons">
+            <a href="https://wa.me/33619923377" target="_blank" title="WhatsApp" class="whatsapp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+            <a href="mailto:eco.challenge06400@gmail.com?subject=Contact Eco-Challenge&body=Bonjour,%0D%0AJe vous contacte concernant..."
+               title="Envoyer un email" class="email">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+
+            <a href="#" aria-label="Instagram" title="Instagram" class="instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+
     <nav class="menu">
+        <a class="menu-item" href="guide.html">Règlement du jeu</a>
+        <a class="menu-item" href="landing.html">Acheter le jeu</a>
+        <a class="menu-item" href="index.html">Jouer en ligne</a>
+        <a class="menu-item" href="quizz.html">Quiz</a>
+        <a class="menu-item" href="">Vidéos explicatives</a>
+    </nav>
+</header>
+
+<!--  <nav class="menu">
         <a class="menuitem" href="#Facile">🌍 Niveau Facile</a>
         <a class="menuitem" href="#Moyen">🌱 Niveau Moyen</a>
         <a class="menuitem" href="#Difficile">🍀 Niveau Difficile</a>
         <a class="menuitem" href="guide.html"> 🔙 Revenir en arrière</a>
-    </nav>
+    </nav>  -->
 
-    <form id="formFacile">
-        <h1 id="Facile">🌍 Quiz Écologie - Niveau Facile</h1>
+<form id="formFacile">
+    <h1 id="Facile">🌍 Quiz Écologie - Niveau Facile</h1>
 
-        <div class="question">
-            <p><strong>1️⃣ Quel gaz est responsable du réchauffement climatique ?</strong></p>
-            <label><input type="radio" name="q1" value="a"> a) L’oxygène (O₂) 🌬️</label><br>
-            <label><input type="radio" name="q1" value="b"> b) Le dioxyde de carbone (CO₂) 🌍</label><br>
-            <label><input type="radio" name="q1" value="c"> c) L’azote (N₂) 🐄</label><br>
-            <label><input type="radio" name="q1" value="d"> d) L’hydrogène (H₂) 💧</label>
-        </div>
+    <div class="question">
+        <p><strong>1️⃣ Quel gaz est responsable du réchauffement climatique ?</strong></p>
+        <label><input type="radio" name="q1" value="a"> a) L’oxygène (O₂) 🌬️</label><br>
+        <label><input type="radio" name="q1" value="b"> b) Le dioxyde de carbone (CO₂) 🌍</label><br>
+        <label><input type="radio" name="q1" value="c"> c) L’azote (N₂) 🐄</label><br>
+        <label><input type="radio" name="q1" value="d"> d) L’hydrogène (H₂) 💧</label>
+    </div>
 
-        <div class="question">
-            <p><strong>2️⃣ Quel geste permet de réduire sa consommation d’eau au quotidien ?</strong></p>
-            <label><input type="radio" name="q2" value="a"> a) Prendre des bains plus longs 🛁</label><br>
-            <label><input type="radio" name="q2" value="b"> b) Laver la vaisselle sous l’eau courante 💦</label><br>
-            <label><input type="radio" name="q2" value="c"> c) Fermer l’eau pendant le brossage de dents 🦷</label><br>
-            <label><input type="radio" name="q2" value="d"> d) Utiliser plus de détergents 🧼</label>
-        </div>
+    <div class="question">
+        <p><strong>2️⃣ Quel geste permet de réduire sa consommation d’eau au quotidien ?</strong></p>
+        <label><input type="radio" name="q2" value="a"> a) Prendre des bains plus longs 🛁</label><br>
+        <label><input type="radio" name="q2" value="b"> b) Laver la vaisselle sous l’eau courante 💦</label><br>
+        <label><input type="radio" name="q2" value="c"> c) Fermer l’eau pendant le brossage de dents 🦷</label><br>
+        <label><input type="radio" name="q2" value="d"> d) Utiliser plus de détergents 🧼</label>
+    </div>
 
-        <div class="question">
-            <p><strong>3️⃣ Quel matériau met des centaines d’années à se décomposer dans la nature ?</strong></p>
-            <label><input type="radio" name="q3" value="a"> a) Une peau de banane 🍌</label><br>
-            <label><input type="radio" name="q3" value="b"> b) Un morceau de papier 📄</label><br>
-            <label><input type="radio" name="q3" value="c"> c) Une bouteille en plastique 🍼</label><br>
-            <label><input type="radio" name="q3" value="d"> d) Un noyau de pêche 🍑</label>
-        </div>
+    <div class="question">
+        <p><strong>3️⃣ Quel matériau met des centaines d’années à se décomposer dans la nature ?</strong></p>
+        <label><input type="radio" name="q3" value="a"> a) Une peau de banane 🍌</label><br>
+        <label><input type="radio" name="q3" value="b"> b) Un morceau de papier 📄</label><br>
+        <label><input type="radio" name="q3" value="c"> c) Une bouteille en plastique 🍼</label><br>
+        <label><input type="radio" name="q3" value="d"> d) Un noyau de pêche 🍑</label>
+    </div>
 
-        <div class="question">
-            <p><strong>4️⃣ Quel type d’énergie est renouvelable ?</strong></p>
-            <label><input type="radio" name="q4" value="a"> a) L’énergie solaire 🌞</label><br>
-            <label><input type="radio" name="q4" value="b"> b) Le charbon 🔥</label><br>
-            <label><input type="radio" name="q4" value="c"> c) Le pétrole 🛢️</label><br>
-            <label><input type="radio" name="q4" value="d"> d) Le gaz naturel 🏭</label>
-        </div>
+    <div class="question">
+        <p><strong>4️⃣ Quel type d’énergie est renouvelable ?</strong></p>
+        <label><input type="radio" name="q4" value="a"> a) L’énergie solaire 🌞</label><br>
+        <label><input type="radio" name="q4" value="b"> b) Le charbon 🔥</label><br>
+        <label><input type="radio" name="q4" value="c"> c) Le pétrole 🛢️</label><br>
+        <label><input type="radio" name="q4" value="d"> d) Le gaz naturel 🏭</label>
+    </div>
 
-        <div class="question">
-            <p><strong>5️⃣ Quel est le principal polluant des océans ?</strong></p>
-            <label><input type="radio" name="q5" value="a"> a) Le sel 🧂</label><br>
-            <label><input type="radio" name="q5" value="b"> b) Le plastique 🛍️</label><br>
-            <label><input type="radio" name="q5" value="c"> c) Les algues 🌿</label><br>
-            <label><input type="radio" name="q5" value="d"> d) Les coquillages 🐚</label>
-        </div>
+    <div class="question">
+        <p><strong>5️⃣ Quel est le principal polluant des océans ?</strong></p>
+        <label><input type="radio" name="q5" value="a"> a) Le sel 🧂</label><br>
+        <label><input type="radio" name="q5" value="b"> b) Le plastique 🛍️</label><br>
+        <label><input type="radio" name="q5" value="c"> c) Les algues 🌿</label><br>
+        <label><input type="radio" name="q5" value="d"> d) Les coquillages 🐚</label>
+    </div>
 
-        <div class="question">
-            <p><strong>6️⃣ Quel est le symbole universel du recyclage ?</strong></p>
-            <label><input type="radio" name="q6" value="a"> a) Une flèche 🔁</label><br>
-            <label><input type="radio" name="q6" value="b"> b) Trois flèches formant un triangle 🔄</label><br>
-            <label><input type="radio" name="q6" value="c"> c) Un cercle bleu 🌍</label><br>
-            <label><input type="radio" name="q6" value="d"> d) Une goutte d’eau 💧</label>
-        </div>
+    <div class="question">
+        <p><strong>6️⃣ Quel est le symbole universel du recyclage ?</strong></p>
+        <label><input type="radio" name="q6" value="a"> a) Une flèche 🔁</label><br>
+        <label><input type="radio" name="q6" value="b"> b) Trois flèches formant un triangle 🔄</label><br>
+        <label><input type="radio" name="q6" value="c"> c) Un cercle bleu 🌍</label><br>
+        <label><input type="radio" name="q6" value="d"> d) Une goutte d’eau 💧</label>
+    </div>
 
-        <div class="question">
-            <p><strong>7️⃣ Comment peut-on économiser de l'énergie chez soi ?</strong></p>
-            <label><input type="radio" name="q7" value="a"> a) Laisser les appareils en veille 🖥️</label><br>
-            <label><input type="radio" name="q7" value="b"> b) Utiliser des ampoules à faible consommation
-                💡</label><br>
-            <label><input type="radio" name="q7" value="c"> c) Garder les fenêtres ouvertes en hiver 🏠</label><br>
-            <label><input type="radio" name="q7" value="d"> d) Allumer toutes les lumières dès qu’on entre 💫</label>
-        </div>
+    <div class="question">
+        <p><strong>7️⃣ Comment peut-on économiser de l'énergie chez soi ?</strong></p>
+        <label><input type="radio" name="q7" value="a"> a) Laisser les appareils en veille 🖥️</label><br>
+        <label><input type="radio" name="q7" value="b"> b) Utiliser des ampoules à faible consommation
+            💡</label><br>
+        <label><input type="radio" name="q7" value="c"> c) Garder les fenêtres ouvertes en hiver 🏠</label><br>
+        <label><input type="radio" name="q7" value="d"> d) Allumer toutes les lumières dès qu’on entre 💫</label>
+    </div>
 
-        <div class="question">
-            <p><strong>8️⃣ Quel est un moyen simple de réduire sa consommation de plastique ?</strong></p>
-            <label><input type="radio" name="q8" value="a"> a) Acheter des bouteilles plastiques 🍼</label><br>
-            <label><input type="radio" name="q8" value="b"> b) Utiliser des sacs en plastique à usage unique
-                🛍️</label><br>
-            <label><input type="radio" name="q8" value="c"> c) Utiliser des sacs réutilisables ♻️</label><br>
-            <label><input type="radio" name="q8" value="d"> d) Jeter les plastiques dans la nature 🌳</label>
-        </div>
+    <div class="question">
+        <p><strong>8️⃣ Quel est un moyen simple de réduire sa consommation de plastique ?</strong></p>
+        <label><input type="radio" name="q8" value="a"> a) Acheter des bouteilles plastiques 🍼</label><br>
+        <label><input type="radio" name="q8" value="b"> b) Utiliser des sacs en plastique à usage unique
+            🛍️</label><br>
+        <label><input type="radio" name="q8" value="c"> c) Utiliser des sacs réutilisables ♻️</label><br>
+        <label><input type="radio" name="q8" value="d"> d) Jeter les plastiques dans la nature 🌳</label>
+    </div>
 
-        <div class="question">
-            <p><strong>9️⃣ Quel est un animal menacé par la pollution des océans ?</strong></p>
-            <label><input type="radio" name="q9" value="a"> a) Le dauphin 🐬</label><br>
-            <label><input type="radio" name="q9" value="b"> b) Le chat 🐱</label><br>
-            <label><input type="radio" name="q9" value="c"> c) Le tigre 🐯</label><br>
-            <label><input type="radio" name="q9" value="d"> d) Le kangourou 🦘</label>
-        </div>
+    <div class="question">
+        <p><strong>9️⃣ Quel est un animal menacé par la pollution des océans ?</strong></p>
+        <label><input type="radio" name="q9" value="a"> a) Le dauphin 🐬</label><br>
+        <label><input type="radio" name="q9" value="b"> b) Le chat 🐱</label><br>
+        <label><input type="radio" name="q9" value="c"> c) Le tigre 🐯</label><br>
+        <label><input type="radio" name="q9" value="d"> d) Le kangourou 🦘</label>
+    </div>
 
-        <div class="question">
-            <p><strong>🔟 Quelle couleur de poubelle est utilisée pour recycler le papier ?</strong></p>
-            <label><input type="radio" name="q10" value="a"> a) Rouge 🔴</label><br>
-            <label><input type="radio" name="q10" value="b"> b) Bleu 🔵</label><br>
-            <label><input type="radio" name="q10" value="c"> c) Vert 🟢</label><br>
-            <label><input type="radio" name="q10" value="d"> d) Noir ⚫</label>
-        </div>
+    <div class="question">
+        <p><strong>🔟 Quelle couleur de poubelle est utilisée pour recycler le papier ?</strong></p>
+        <label><input type="radio" name="q10" value="a"> a) Rouge 🔴</label><br>
+        <label><input type="radio" name="q10" value="b"> b) Bleu 🔵</label><br>
+        <label><input type="radio" name="q10" value="c"> c) Vert 🟢</label><br>
+        <label><input type="radio" name="q10" value="d"> d) Noir ⚫</label>
+    </div>
 
-        <button type="submit">Validez mes réponses</button>
-    </form>
+    <button type="submit">Validez mes réponses</button>
+</form>
 
-    <div id="resultContainerFacile"></div>
+<div id="resultContainerFacile"></div>
 
-</body>
-
-</html>
-
-
-<!-- Quiz Niveau Moyen -->
 <form id="formMoyen">
     <h1 id="Moyen">🌱 <strong>Quiz Écologie - Niveau Moyen</strong></h1>
 
@@ -202,7 +231,6 @@
     <button type="submit">Validez mes réponses</button>
 </form>
 
-<!-- Conteneur de résultats pour le quiz Moyen -->
 <div id="resultContainerMoyen"></div>
 
 <form id="formDifficile">
@@ -293,24 +321,7 @@
     <button type="submit">Validez mes réponses</button>
 </form>
 
-<!-- Conteneur de résultats pour le quiz Difficile -->
-<div id="resultContainerDifficile"></div>
-
-</form>
-
-<!-- Conteneur de résultats pour le quiz Facile -->
-<div id="resultContainerDifficile"></div>
-
-<button id="topButton" onclick="scrollToTop()">🔝</button>
-
-<footer>
-    <p>&copy; 2025 Eco-Challenge. Tous droits réservés.</p>
-</footer>
-
-
-
 <script src="js/guide/quizz.js"></script>
 
 </body>
-
 </html>
