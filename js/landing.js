@@ -28,8 +28,9 @@ window.addEventListener("DOMContentLoaded", function () {
     const registerPassword = document.getElementById("registerPassword");
     const registerPasswordConfirm = document.getElementById("registerPasswordConfirm");
 
-    const parentConsent = document.getElementById("parentConsent");
-    const robotCheck = document.getElementById("robotCheck");
+    const ageConsent = document.getElementById("ageConsent");
+    const privacyConsent = document.getElementById("privacyConsent");
+    const termsConsent = document.getElementById("termsConsent");
 
     const prixParEdition = {
         complete: 29.99,
@@ -125,12 +126,26 @@ window.addEventListener("DOMContentLoaded", function () {
     function calculateAgeFromBirthdate(birthdateValue) {
         if (!birthdateValue) return 0;
 
-        const today = new Date();
-        const birthDate = new Date(birthdateValue);
+        let birthDate;
+
+        if (birthdateValue.includes("/")) {
+            const parts = birthdateValue.split("/");
+            if (parts.length !== 3) return 0;
+
+            const day = parseInt(parts[0], 10);
+            const month = parseInt(parts[1], 10) - 1;
+            const year = parseInt(parts[2], 10);
+
+            birthDate = new Date(year, month, day);
+        } else {
+            birthDate = new Date(birthdateValue);
+        }
 
         if (Number.isNaN(birthDate.getTime())) return 0;
 
+        const today = new Date();
         let age = today.getFullYear() - birthDate.getFullYear();
+
         const monthDiff = today.getMonth() - birthDate.getMonth();
         const dayDiff = today.getDate() - birthDate.getDate();
 
@@ -240,14 +255,14 @@ window.addEventListener("DOMContentLoaded", function () {
             const firstName = registerFirstName ? registerFirstName.value.trim() : "";
             const lastName = registerLastName ? registerLastName.value.trim() : "";
             const sex = registerSex ? registerSex.value : "";
-            const birthdateValue = registerBirthdate ? registerBirthdate.value : "";
+            const birthdateValue = registerBirthdate ? registerBirthdate.value.trim() : "";
             const email = registerEmail ? registerEmail.value.trim() : "";
             const password = registerPassword ? registerPassword.value.trim() : "";
             const confirmPassword = registerPasswordConfirm ? registerPasswordConfirm.value.trim() : "";
 
-            const consent = parentConsent ? parentConsent.checked : false;
-            const robotValid = robotCheck ? robotCheck.checked : false;
-            const rgpdValid = !!document.querySelector("#rgpdConsent:checked");
+            const ageValid = ageConsent ? ageConsent.checked : false;
+            const privacyValid = privacyConsent ? privacyConsent.checked : false;
+            const termsValid = termsConsent ? termsConsent.checked : false;
 
             const age = calculateAgeFromBirthdate(birthdateValue);
 
@@ -261,18 +276,18 @@ window.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
-            if (!consent) {
-                alert("Merci de confirmer l'accord parental.");
+            if (!ageValid) {
+                alert("Merci de confirmer l'âge minimum ou l'accord des représentants légaux.");
                 return;
             }
 
-            if (!rgpdValid) {
-                alert("Merci d'accepter l'utilisation des données.");
+            if (!privacyValid) {
+                alert("Merci d'accepter la politique de confidentialité.");
                 return;
             }
 
-            if (!robotValid) {
-                alert("Merci de confirmer que tu n'es pas un robot 🤖");
+            if (!termsValid) {
+                alert("Merci d'accepter les Conditions Générales de Vente et les mentions légales.");
                 return;
             }
 
@@ -341,7 +356,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
             const isHidden = input.type === "password";
             input.type = isHidden ? "text" : "password";
-            toggle.textContent = isHidden ? "🙈" : "👁️";
+            toggle.textContent = isHidden ? "👁️" : "🙈";
 
             toggle.style.transform = "translateY(-50%) scale(1.12)";
             setTimeout(function () {
@@ -353,4 +368,13 @@ window.addEventListener("DOMContentLoaded", function () {
     updatePrice();
     updatePaymentButton();
     showLogin();
+
+    if (typeof flatpickr !== "undefined" && registerBirthdate) {
+        flatpickr("#registerBirthdate", {
+            dateFormat: "d/m/Y",
+            locale: "fr",
+            maxDate: "today",
+            allowInput: true
+        });
+    }
 });

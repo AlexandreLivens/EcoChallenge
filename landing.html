@@ -44,118 +44,6 @@
     </nav>
 </header>
 
-
-<div id="authOverlay" class="auth-overlay">
-    <div class="auth-box">
-        <div class="auth-header">
-            <h2>🌱 Bienvenue sur Éco-Challenge</h2>
-            <p>Connecte-toi à ton compte ou crée-en un pour continuer.</p>
-        </div>
-
-        <div class="auth-tabs">
-            <button type="button" class="auth-tab active" id="loginTab">Se connecter</button>
-            <button type="button" class="auth-tab" id="registerTab">Créer un compte</button>
-        </div>
-
-        <form id="loginForm" class="auth-form active">
-            <label for="loginEmail">
-                Adresse e-mail
-                <input id="loginEmail" type="email" placeholder="Votre email" required>
-            </label>
-
-            <label for="loginPassword">
-                Mot de passe
-                <div class="password-field">
-                    <input id="loginPassword" type="password" placeholder="Votre mot de passe" required>
-                    <span class="toggle-password" data-target="loginPassword">🙈️</span>
-                </div>
-            </label>
-
-            <button type="submit" class="auth-main-btn">Se connecter</button>
-        </form>
-
-        <form class="auth-form" id="registerForm">
-            <label for="registerLastName">
-                Nom de famille
-                <input id="registerLastName" type="text" placeholder="Votre nom de famille" required>
-            </label>
-
-            <label for="registerFirstName">
-                Prénom
-                <input id="registerFirstName" type="text" placeholder="Votre prénom" required>
-            </label>
-
-            <label for="registerSex">
-                Sexe
-                <select id="registerSex" required>
-                    <option value="">Choisir</option>
-                    <option value="male">Homme</option>
-                    <option value="female">Femme</option>
-                </select>
-            </label>
-
-            <label for="registerBirthdate">
-                Date de naissance
-                <input id="registerBirthdate" type="date" lang="fr" required>
-            </label>
-
-            <label for="registerEmail">
-                Adresse e-mail
-                <input id="registerEmail" type="email" placeholder="Votre email" required>
-            </label>
-
-            <label for="registerPassword">
-                Mot de passe
-                <div class="password-field">
-                    <input id="registerPassword" type="password" placeholder="Choisissez un mot de passe" required>
-                    <span class="toggle-password" data-target="registerPassword">️🙈</span>
-                </div>
-            </label>
-
-            <label for="registerPasswordConfirm">
-                Confirmer le mot de passe
-                <div class="password-field">
-                    <input id="registerPasswordConfirm" type="password" placeholder="Confirmez votre mot de passe" required>
-                    <span class="toggle-password" data-target="registerPasswordConfirm">️🙈</span>
-                </div>
-            </label>
-
-            <label class="consent-item">
-                    <input type="checkbox" id="ageConsent" name="ageConsent" required>
-                    <span>
-        Je confirme avoir au moins 15 ans ou disposer de l’accord de mes représentants légaux,
-        conformément à la réglementation en vigueur
-        (<a href="https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000037085952/" target="_blank" rel="noopener noreferrer">
-        </a>).
-    </span>
-                </label>
-
-            <label class="consent-item">
-                <input type="checkbox" id="privacyConsent" name="privacyConsent" required>
-                <span>
-      J’ai lu et j’accepte la
-      <a href="/politique-confidentialite.html" target="_blank" rel="noopener noreferrer">politique de confidentialité</a>.
-    </span>
-            </label>
-
-            <label class="consent-item">
-                <input type="checkbox" id="termsConsent" name="termsConsent" required>
-                <span>
-      J’ai lu et j’accepte les
-      <a href="/cgv.html" target="_blank" rel="noopener noreferrer">Conditions Générales de Vente</a>
-      ainsi que les
-      <a href="/mentions-legales.html" target="_blank" rel="noopener noreferrer">mentions légales</a>.
-    </span>
-            </label>
-            <button type="submit" class="auth-main-btn">Créer mon compte</button>
-        </form>
-
-        <button type="button" id="continueGuest" class="auth-secondary-btn">
-            Continuer sans compte
-        </button>
-    </div>
-</div>
-
 <main>
     <section class="edition-version">
         <h3>🟢 1. Édition Complète – Pack Premium</h3>
@@ -253,40 +141,81 @@
     </section>
 </main>
 
-<div id="contactPanel">
-    <button id="contactClose" type="button">✖</button>
-    <p class="contact-intro">
-        <strong>Bonjour, ici Eco-Challenge 🌱</strong><br>
-        Vous pouvez nous écrire pour toute question ou demande d’assistance.
-        Notre équipe vous répondra dans les plus brefs délais.
-    </p>
-    <p class="contact-intro">
-        Service client disponible <strong>24h/24 et 7j/7</strong>.
-    </p>
-    <div class="contact-block">
-        <p>
-            <span class="icon">📧</span>
-            <strong>Mail :</strong>
-            <a href="mailto:eco.challenge06400@gmail.com">eco.challenge06400@gmail.com</a>
-        </p>
-        <p>
-            <span class="icon">📞</span>
-            <strong>Téléphone :</strong>
-            <a href="tel:+33612345678">+33 6 12 34 56 78</a>
-            <span class="note">(appel / WhatsApp)</span>
-        </p>
-    </div>
-</div>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-row">
+            <div class="footer-column">
+                <h3>Éco-Challenge </h3>
+                <div class="footer-column-content">
+                    <p>Créateur : LIVENS Alexandre </p>
+                    <p>France, Cannes 06400 </p>
+                </div>
+            </div>
 
-<div class="game-rules">
-    📘 Tu veux consulter les règles avant d’acheter ?
-    <a href="guide.html" class="button small">📖 Voir le règlement</a>
-</div>
+            <div class="footer-column">
+                <h3>Documents</h3>
+                <div class="footer-column-content">
+                    <p>
+                        <a href="privacy-policy.html">📄 Conditions générales</a>
+                    </p>
+                    <p>
+                        <a href="Privacy%20Policy.html">🔒 Politique de confidentialité</a>
+                    </p>
+                </div>
+            </div>
 
-<div class="tools-panel">
-    <a href="#" class="back-to-top" title="Remonter en haut">⬆️</a>
-    <button id="contactBtn" type="button">💬 Contact</button>
-</div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <div class="footer-column-content">
+                    <p>📞 +33 6 19 92 33 77</p>
+                    <p>✉️ eco.challenge06400@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Réseaux</h3>
+                <div class="socials">
+                    <a href="https://wa.me/33619923377" target="_blank" title="WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+
+                    <a href="https://mail.google.com/mail/u/3/#inbox?compose=new" aria-label="Gmail" title="Gmail">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+
+                    <a href="#" aria-label="Instagram" title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="TikTok" title="TikTok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+
+                    <a href="#" aria-label="YouTube" title="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                    <a href="#" aria-label="LinkedIn" title="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="#" aria-label="Telegram" title="Telegram">
+                        <i class="fa-brands fa-telegram"></i>
+                    </a>
+
+                    <a href="#" target="_blank" title="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-row footer-bottom">
+            <p>
+                © 2025-2026 Eco-Challenge. Tous droits réservés.
+            </p>
+        </div>
+</footer>
 
 <div id="contactPanel">
     <button id="contactClose">✖</button>
@@ -318,72 +247,6 @@
     <button id="contactBtn" type="button">💬 Contact</button>
 </div>
 
-<footer class="footer">
-    <div class="footer-container">
-
-        <div class="footer-column">
-            <h3>Éco-Challenge </h3>
-            <p>Créateur :  LIVENS Alexandre </p>
-            <p>France, Cannes 06400 </p>
-        </div>
-
-        <div class="footer-column">
-            <h3>Documents</h3>
-            <a href="#">📄 Conditions générales</a>
-            <a href="#">🔒 Politique de confidentialité</a>
-        </div>
-
-        <div class="footer-column">
-            <h3>Contact</h3>
-            <p>📞 +33 6 19 92 33 77</p>
-            <p>✉️ eco.challenge06400@gmail.com </p>
-        </div>
-
-        <div class="footer-column">
-            <h3>Réseaux</h3>
-
-            <div class="socials">
-                <a href="https://wa.me/33619923377" target="_blank" title="WhatsApp">
-                    <i class="fa-brands fa-whatsapp"></i>
-                </a>
-
-                <a href="https://mail.google.com/mail/u/3/#inbox?compose=new" aria-label="Gmail" title="Gmail">
-                    <i class="fa-solid fa-envelope"></i>
-                </a>
-
-                <a href="#" aria-label="Instagram" title="Instagram">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-
-                <a href="#" aria-label="TikTok" title="TikTok">
-                    <i class="fa-brands fa-tiktok"></i>
-                </a>
-
-                <a href="#" aria-label="YouTube" title="YouTube">
-                    <i class="fa-brands fa-youtube"></i>
-                </a>
-
-                <a href="#" aria-label="LinkedIn" title="LinkedIn">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-
-                <a href="#" aria-label="Telegram" title="Telegram">
-                    <i class="fa-brands fa-telegram"></i>
-                </a>
-
-                <a href="#" target="_blank" title="Facebook">
-                    <i class="fa-brands fa-facebook-f"></i>
-                </a>
-            </div>
-
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-        </div>
-
-        <div class="footer-bottom">
-            © 2025-2026 Eco-Challenge. Tous droits réservés.
-
-        </div>
-</footer>
 
 <script src="js/landing.js" defer></script>
 <script src="js/tools.js" defer></script>
