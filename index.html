@@ -26,7 +26,8 @@
                 <i class="fa-brands fa-whatsapp"></i>
             </a>
 
-            <a href="mailto:eco.challenge06400@gmail.com?subject=Contact Eco-Challenge&body=Bonjour,%0D%0AJe vous contacte concernant..." title="Envoyer un email" class="email">
+            <a href="mailto:eco.challenge06400@gmail.com?subject=Contact Eco-Challenge&body=Bonjour,%0D%0AJe vous contacte concernant..."
+               title="Envoyer un email" class="email">
                 <i class="fa-solid fa-envelope"></i>
             </a>
 
@@ -41,108 +42,186 @@
         <a class="menu-item" href="landing.html">Acheter le jeu</a>
         <a class="menu-item" href="index.html">Jouer en ligne</a>
         <a class="menu-item" href="quizz.html">Quiz</a>
-       <a class="menu-item" href="">Vidéos explicatives</a>
+        <a class="menu-item" href="">Vidéos explicatives</a>
     </nav>
 </header>
 
 <canvas id="fx" aria-hidden="true"></canvas>
 
 <main class="main" role="main">
-
-    <div class="toolbar">
-        <div class="group">
-            <select id="langSel" class="sel" aria-label="Langue">
-                <option value="fr">Français</option>
-                <option value="en">English</option>
-                <option value="ru">Русский</option>
-            </select>
-            <select id="seasonSel" class="sel" aria-label="Saison">
-                <option value="printemps">🌸 Printemps</option>
-                <option value="ete">☀️ Été</option>
-                <option value="automne">🍂 Automne</option>
-                <option value="hiver">❄️ Hiver</option>
-            </select>
+    <div class="main-content">
+        <div class="toolbar">
+            <div class="group">
+                <select id="langSel" class="sel" aria-label="Langue">
+                    <option value="fr">Français</option>
+                    <option value="en">English</option>
+                    <option value="ru">Русский</option>
+                </select>
+                <select id="seasonSel" class="sel" aria-label="Saison">
+                    <option value="printemps">🌸 Printemps</option>
+                    <option value="ete">☀️ Été</option>
+                    <option value="automne">🍂 Automne</option>
+                    <option value="hiver">❄️ Hiver</option>
+                </select>
+            </div>
+            <button class="mini-btn" id="btnRulesQuick" type="button">📜 Règles</button>
         </div>
-        <button class="mini-btn" id="btnRulesQuick" type="button">📜 Règles</button>
-    </div>
 
-    <div class="head" aria-label="Logo Éco‑Challenge">
-        <svg class="logo-svg" viewBox="0 0 100 100" aria-hidden="true">
-            <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="2"/>
-            <rect x="48" y="42" width="4" height="36" rx="2" fill="#dcefe8"/>
-            <g transform="translate(50 42)">
-                <g style="transform-origin:0px 0px; animation:spin 2.6s linear infinite">
-                    <path d="M0,0 L36,-6 Q45,-5 44,0 Q45,5 36,6 Z" fill="#c9ffe9"/>
-                    <path d="M0,0 L-12,34 Q-16,42 -12,44 Q-8,42 -4,34 Z" fill="#a2f5da" transform="rotate(120)"/>
-                    <path d="M0,0 L-12,34 Q-16,42 -12,44 Q-8,42 -4,34 Z" fill="#85e7cc" transform="rotate(240)"/>
+        <div class="head" aria-label="Logo Éco‑Challenge">
+            <svg class="logo-svg" viewBox="0 0 100 100" aria-hidden="true">
+                <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="2"/>
+                <rect x="48" y="42" width="4" height="36" rx="2" fill="#dcefe8"/>
+                <g transform="translate(50 42)">
+                    <g style="transform-origin:0px 0px; animation:spin 2.6s linear infinite">
+                        <path d="M0,0 L36,-6 Q45,-5 44,0 Q45,5 36,6 Z" fill="#c9ffe9"/>
+                        <path d="M0,0 L-12,34 Q-16,42 -12,44 Q-8,42 -4,34 Z" fill="#a2f5da" transform="rotate(120)"/>
+                        <path d="M0,0 L-12,34 Q-16,42 -12,44 Q-8,42 -4,34 Z" fill="#85e7cc" transform="rotate(240)"/>
+                    </g>
                 </g>
-            </g>
-        </svg>
-        <div class="logoWord" id="logoWord">ÉCO‑CHALLENGE</div>
-    </div>
-
-    <p class="tag" id="tagline">Clique sur <strong>Départ</strong> puis choisis joueurs, pseudos et robot ♻️</p>
-
-    <figure class="rules" id="rulesBlock">
-        <img src="img/reglement.png" alt="Aperçu du règlement" id="rulesImg" loading="lazy">
-    </figure>
-
-    <div class="row">
-        <button class="btn btn-start" id="btnStart" type="button">▶️ DÉPART</button>
-        <a id="fullRulesLink" class="btn" href="#" target="_blank" rel="noopener" style="display:none">🔗 Règlement
-            complet</a>
-    </div>
-
-    <div class="stepper" id="stepper" aria-hidden="true">
-        <div class="dot" id="d1"></div>
-        <div class="dot" id="d2"></div>
-        <div class="dot" id="d3"></div>
-    </div>
-    <div class="progress" id="progress">
-        <div class="bar" id="bar"></div>
-    </div>
-
-    <section class="wizard" id="wizard" aria-label="Configuration de la partie">
-
-        <div class="screen active" data-step="1">
-            <label for="players" id="lblPlayers">Combien de joueurs ?</label>
-            <select id="players" class="selIn" required>
-                <option value="1">1 joueur</option>
-                <option value="2">2 joueurs</option>
-                <option value="3">3 joueurs</option>
-                <option value="4">4 joueurs</option>
-            </select>
-            <div class="err" id="errPlayers">Sélectionne un nombre de joueurs.</div>
-            <div class="row">
-                <button class="btn" id="toStep2" type="button">Suivant →</button>
-            </div>
+            </svg>
+            <div class="logoWord" id="logoWord">ÉCO‑CHALLENGE</div>
         </div>
 
-        <div class="screen" data-step="2">
-            <div class="players-box" id="playersBox"></div>
-            <div class="err" id="errNames">Entre tous les pseudos pour continuer.</div>
-            <div class="row">
-                <button class="btn" id="back1" type="button">← Retour</button>
-                <button class="btn" id="toStep3" type="button">Suivant →</button>
-            </div>
+        <p class="tag" id="tagline">Clique sur <strong>Départ</strong> puis choisis joueurs, pseudos et robot ♻️</p>
+
+        <figure class="rules" id="rulesBlock">
+            <img src="img/reglement.png" alt="Aperçu du règlement" id="rulesImg" loading="lazy">
+        </figure>
+
+        <div class="row">
+            <button class="btn btn-start" id="btnStart" type="button">▶️ DÉPART</button>
+            <a id="fullRulesLink" class="btn" href="#" target="_blank" rel="noopener" style="display:none">🔗 Règlement
+                complet</a>
         </div>
 
-        <div class="screen" data-step="3">
-            <label for="bot" id="lblBot">Ajouter un robot ?</label>
-            <select id="bot" class="selIn">
-                <option value="none">Aucun robot</option>
-                <option value="facile">Robot — Facile</option>
-                <option value="moyen">Robot — Moyen</option>
-                <option value="difficile">Robot — Difficile</option>
-            </select>
-            <div class="row">
-                <button class="btn" id="back2" type="button">← Retour</button>
-                <button class="btn" id="launch" type="button">Lancer la partie ▶️</button>
-            </div>
-            <p class="footer-note" id="saveNote">Les paramètres sont mémorisés localement.</p>
+        <div class="stepper" id="stepper" aria-hidden="true">
+            <div class="dot" id="d1"></div>
+            <div class="dot" id="d2"></div>
+            <div class="dot" id="d3"></div>
         </div>
-    </section>
+        <div class="progress" id="progress">
+            <div class="bar" id="bar"></div>
+        </div>
+
+        <section class="wizard" id="wizard" aria-label="Configuration de la partie">
+
+            <div class="screen active" data-step="1">
+                <label for="players" id="lblPlayers">Combien de joueurs ?</label>
+                <select id="players" class="selIn" required>
+                    <option value="1">1 joueur</option>
+                    <option value="2">2 joueurs</option>
+                    <option value="3">3 joueurs</option>
+                    <option value="4">4 joueurs</option>
+                </select>
+                <div class="err" id="errPlayers">Sélectionne un nombre de joueurs.</div>
+                <div class="row">
+                    <button class="btn" id="toStep2" type="button">Suivant →</button>
+                </div>
+            </div>
+
+            <div class="screen" data-step="2">
+                <div class="players-box" id="playersBox"></div>
+                <div class="err" id="errNames">Entre tous les pseudos pour continuer.</div>
+                <div class="row">
+                    <button class="btn" id="back1" type="button">← Retour</button>
+                    <button class="btn" id="toStep3" type="button">Suivant →</button>
+                </div>
+            </div>
+
+            <div class="screen" data-step="3">
+                <label for="bot" id="lblBot">Ajouter un robot ?</label>
+                <select id="bot" class="selIn">
+                    <option value="none">Aucun robot</option>
+                    <option value="facile">Robot — Facile</option>
+                    <option value="moyen">Robot — Moyen</option>
+                    <option value="difficile">Robot — Difficile</option>
+                </select>
+                <div class="row">
+                    <button class="btn" id="back2" type="button">← Retour</button>
+                    <button class="btn" id="launch" type="button">Lancer la partie ▶️</button>
+                </div>
+                <p class="footer-note" id="saveNote">Les paramètres sont mémorisés localement.</p>
+            </div>
+        </section>
+    </div>
+
 </main>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-row">
+            <div class="footer-column">
+                <h3>Éco-Challenge </h3>
+                <div class="footer-column-content">
+                    <p>Créateur : LIVENS Alexandre </p>
+                    <p>France, Cannes 06400 </p>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Documents</h3>
+                <div class="footer-column-content">
+                    <p>
+                        <a href="privacy-policy.html">📄 Conditions générales</a>
+                    </p>
+                    <p>
+                        <a href="Privacy%20Policy.html">🔒 Politique de confidentialité</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <div class="footer-column-content">
+                    <p>📞 +33 6 19 92 33 77</p>
+                    <p>✉️ eco.challenge06400@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Réseaux</h3>
+                <div class="socials">
+                    <a href="https://wa.me/33619923377" target="_blank" title="WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+
+                    <a href="https://mail.google.com/mail/u/3/#inbox?compose=new" aria-label="Gmail" title="Gmail">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+
+                    <a href="#" aria-label="Instagram" title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="TikTok" title="TikTok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+
+                    <a href="#" aria-label="YouTube" title="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                    <a href="#" aria-label="LinkedIn" title="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="#" aria-label="Telegram" title="Telegram">
+                        <i class="fa-brands fa-telegram"></i>
+                    </a>
+
+                    <a href="#" target="_blank" title="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-row footer-bottom">
+            <p>
+                © 2025-2026 Eco-Challenge. Tous droits réservés.
+            </p>
+        </div>
+</footer>
 
 <div class="modal" id="modal">
     <div class="modal-card">
