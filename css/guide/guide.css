@@ -7,8 +7,6 @@
     --green: #2f9e44;
     --green-dark: #1f7a33;
     --green-border: #bfe8ca;
-    --accent: #ffd76a;
-    --accent-soft: #fff4cf;
     --shadow: 0 10px 30px rgba(31, 122, 51, 0.10);
     --shadow-hover: 0 18px 45px rgba(31, 122, 51, 0.16);
     --radius-xl: 28px;
@@ -35,15 +33,6 @@ body {
     background-attachment: fixed;
     color: var(--text);
     line-height: 1.7;
-}
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.14);
-    pointer-events: none;
-    z-index: -1;
 }
 
 main {
@@ -91,7 +80,7 @@ strong {
     color: #12311f;
 }
 
-.eco-challenge-container {
+.eco-container {
     width: min(1100px, 100%);
     margin: 10vh auto 80px;
     padding: 60px 48px;
@@ -103,7 +92,7 @@ strong {
     box-shadow: var(--shadow);
 }
 
-.eco-challenge-container h1 {
+.main-title {
     text-align: center;
     font-size: clamp(1.9rem, 4vw, 3.2rem);
     font-weight: 800;
@@ -113,7 +102,7 @@ strong {
     line-height: 1.08;
 }
 
-#bienvenue {
+.welcome-title {
     text-align: center;
     font-size: clamp(1.2rem, 2.4vw, 1.7rem);
     font-weight: 700;
@@ -123,7 +112,7 @@ strong {
     line-height: 1.35;
 }
 
-.description {
+.game-description {
     text-align: center;
     max-width: 900px;
     margin: 0 auto 34px;
@@ -132,7 +121,7 @@ strong {
     color: var(--green-dark);
 }
 
-.intro {
+.intro-box {
     text-align: center;
     max-width: 900px;
     margin: 0 auto 24px;
@@ -147,182 +136,119 @@ strong {
     box-shadow: 0 10px 26px rgba(47, 158, 68, 0.08);
 }
 
-.intro strong {
+.intro-box strong {
     color: var(--green-dark);
 }
 
-.game-info {
+.section-container {
     margin-top: 60px;
-
     padding: 52px 46px;
-
     background: linear-gradient(
             180deg,
             rgba(255,255,255,0.94) 0%,
             rgba(246,255,248,0.94) 100%
     );
-
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-
     border: 1px solid rgba(191, 232, 202, 0.8);
-
     border-radius: 34px;
-
     box-shadow:
             0 18px 50px rgba(31, 122, 51, 0.08),
             inset 0 1px 0 rgba(255,255,255,0.9);
 }
 
-.game-info h2,
-#cases,
-#maire,
-#regles,
-#cartes,
-#victoire,
-#pourquoi {
+.section-title {
     width: fit-content;
     max-width: min(100%, 950px);
-
     margin: 60px auto 34px;
-
     padding: 18px 34px;
-
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 14px;
-
-    position: relative;
-
     text-align: center;
-
     font-size: clamp(1.5rem, 2.8vw, 2.3rem);
     font-weight: 800;
-
     letter-spacing: -0.04em;
     line-height: 1.15;
-
     color: #ffffff;
-
     background: rgba(255,255,255,0.18);
-
     backdrop-filter: blur(22px);
     -webkit-backdrop-filter: blur(22px);
-
     border: 1px solid rgba(255,255,255,0.34);
-
     border-radius: 26px;
-
     box-shadow:
             0 16px 40px rgba(0,0,0,0.18),
             inset 0 1px 0 rgba(255,255,255,0.30);
-
-    text-shadow:
-            0 4px 18px rgba(0,0,0,0.45);
+    text-shadow: 0 4px 18px rgba(0,0,0,0.45);
 }
 
-.game-info h2::before,
-#cases::before,
-#maire::before,
-#regles::before,
-#cartes::before,
-#victoire::before,
-#pourquoi::before {
-    display: none;
-}
-
-.game-steps {
+.steps-list {
     display: grid;
-
     gap: 22px;
-
-    margin-top: 34px;
-    margin-bottom: 46px;
-
+    margin: 34px 0 46px;
     list-style: none;
 }
 
-.game-steps li {
+.steps-list li {
     padding: 24px 26px;
-
     background: rgba(255,255,255,0.88);
-
     border: 1px solid rgba(191,232,202,0.9);
-
     border-radius: 20px;
-
     font-size: 1.02rem;
     font-weight: 500;
-
     color: var(--text);
-
     line-height: 1.8;
-
-    box-shadow:
-            0 10px 24px rgba(47, 158, 68, 0.05);
-
+    box-shadow: 0 10px 24px rgba(47, 158, 68, 0.05);
     transition: var(--transition);
 }
 
-.game-steps li:hover {
+.steps-list li:hover {
     transform: translateY(-3px);
-
-    box-shadow:
-            0 18px 36px rgba(31, 122, 51, 0.12);
+    box-shadow: 0 18px 36px rgba(31, 122, 51, 0.12);
 }
-
-.combien-header {
-    margin-top: 42px !important;
-}
-
-.board-info {
-    margin-bottom: 20px;
-
-    font-size: 1.12rem;
-    font-weight: 500;
-
+.info-text {
+    width: min(900px, 100%);
+    margin: 26px auto;
+    padding: 22px 28px;
+    text-align: center;
     line-height: 1.8;
-}
-
-.game-info p {
-    margin-bottom: 24px;
-
-    line-height: 1.9;
-}
-
-.game-info ul {
-    width: min(1100px, 100%);
-    margin: 24px auto 34px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 18px;
-    list-style: none;
-}
-
-.game-info ul li {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: min(1100px, 100%);
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 22px 26px 22px 62px;
-    background: rgba(255,255,255,0.92);
-    border: 1px solid rgba(191,232,202,0.9);
+    background: rgba(255, 255, 255, 0.90);
+    border: 1px solid rgba(191, 232, 202, 0.9);
     border-radius: 20px;
     color: var(--text);
     font-weight: 500;
-    line-height: 1.7;
-    box-shadow:
-            0 8px 22px rgba(47, 158, 68, 0.04);
+    box-shadow: 0 8px 22px rgba(47, 158, 68, 0.05);
 }
 
-.game-info ul li::before {
+.rules-list {
+    width: min(900px, 100%);
+    margin: 28px auto 40px;
+    display: grid;
+    gap: 20px;
+    list-style: none;
+}
+
+.rules-list li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 24px 28px 24px 64px;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(191, 232, 202, 0.9);
+    border-radius: 22px;
+    color: var(--text);
+    font-weight: 600;
+    line-height: 1.6;
+    box-shadow: 0 10px 26px rgba(47, 158, 68, 0.06);
+}
+
+.rules-list li::before {
     content: "✔";
+
     position: absolute;
-    left: 22px;
+    left: 24px;
     top: 50%;
     transform: translateY(-50%);
     width: 24px;
@@ -330,25 +256,26 @@ strong {
     border-radius: 50%;
     background: var(--green);
     color: white;
-    font-size: 0.9rem;
-    font-weight: 700;
-
+    font-size: 0.85rem;
+    font-weight: 800;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow:
-            0 4px 10px rgba(47,158,68,0.25);
 }
 
-.les-cases-du-jeu {
+.center-text {
+    text-align: center;
+}
+
+.game-cases-list {
     width: min(1100px, 100%);
-    margin: 0 auto 24px;
-    list-style: none;
+    margin: 0 auto 34px;
     display: grid;
     gap: 22px;
+    list-style: none;
 }
 
-.les-cases-du-jeu li {
+.game-cases-list li {
     position: relative;
     padding: 28px;
     overflow: hidden;
@@ -364,7 +291,7 @@ strong {
     transition: var(--transition);
 }
 
-.les-cases-du-jeu li::after {
+.game-cases-list li::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -377,21 +304,16 @@ strong {
     pointer-events: none;
 }
 
-.les-cases-du-jeu li:hover {
+.game-cases-list li:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-hover);
 }
 
-.les-cases-du-jeu li strong {
-    color: var(--text);
-}
-
-.les-cases-du-jeu li p {
+.game-cases-list li p {
     margin-bottom: 12px;
 }
 
-.les-cases-du-jeu li center,
-.les-cases-du-jeu li p[style*="text-align: center"] {
+.case-title {
     display: block;
     margin-bottom: 16px;
     text-align: center;
@@ -400,7 +322,7 @@ strong {
     color: var(--green-dark);
 }
 
-.les-cases-du-jeu li img {
+.game-cases-list li img {
     width: min(100%, 340px);
     margin: 18px 12px 0 0;
     padding: 6px;
@@ -413,65 +335,88 @@ strong {
     transition: var(--transition);
 }
 
-.les-cases-du-jeu li img:hover {
+.game-cases-list li img:hover {
     transform: scale(1.03);
 }
 
-#maire + .les-cases-du-jeu,
-#regles + p,
-#regles + p + .les-cases-du-jeu,
-#cartes + .les-cases-du-jeu,
-#victoire + p,
-#victoire + p + .les-cases-du-jeu,
-#pourquoi + .eco-challenge-container {
+.cards-section,
+.victory-section,
+.mayor-section {
     width: min(1100px, 100%);
-    margin-left: auto;
-    margin-right: auto;
+    margin-inline: auto;
 }
 
-#regles + p,
-#victoire + p,
-#victoire + p + ul + p,
-#victoire + p + ul + p + p {
-    margin-bottom: 16px;
-    padding: 20px 22px;
-    background: rgba(255,255,255,0.92);
-    border: 1px solid var(--green-border);
-    border-radius: 18px;
-    box-shadow: var(--shadow);
-    color: var(--text);
-}
-
-#pourquoi + .eco-challenge-container {
+.why-list {
     display: grid;
-    gap: 14px;
-    padding: 26px;
+    gap: 18px;
+    width: min(900px, 100%);
+    margin: 30px auto;
     list-style: none;
 }
 
-#pourquoi + .eco-challenge-container li {
+.why-list li {
     position: relative;
-    padding: 16px 16px 16px 52px;
-    background: #fff;
-    border: 1px solid var(--green-border);
-    border-radius: 18px;
-    font-weight: 500;
+    padding: 22px 24px 22px 62px;
+    background: rgba(255,255,255,0.92);
+    border: 1px solid rgba(191,232,202,0.9);
+    border-radius: 20px;
     color: var(--text);
+    font-weight: 500;
+    line-height: 1.7;
+    box-shadow: 0 8px 22px rgba(47, 158, 68, 0.04);
 }
 
-#pourquoi + .eco-challenge-container li::before {
+.why-list li::before {
     content: "✔";
     position: absolute;
-    left: 18px;
-    top: 16px;
-    width: 22px;
-    height: 22px;
+    left: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     background: var(--green);
-    color: #fff;
-    font-size: 0.85rem;
+    color: white;
+    font-size: 0.9rem;
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 4px 10px rgba(47,158,68,0.25);
+}
+
+.center-text {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+
+    .eco-container {
+        padding: 38px 22px;
+    }
+
+    .section-container {
+        padding: 34px 24px;
+    }
+
+    .section-title {
+        width: 100%;
+        padding: 16px 18px;
+        font-size: 1.35rem;
+    }
+
+    .steps-list li,
+    .rules-list li,
+    .why-list li {
+        padding: 18px 18px 18px 54px;
+    }
+
+    .game-cases-list li {
+        padding: 22px;
+    }
+
+    .game-cases-list li img {
+        width: 100%;
+        margin: 18px 0 0;
+    }
 }
