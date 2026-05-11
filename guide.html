@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/tools.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/rating.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -358,6 +359,61 @@
         </p>
     </div>
 </div>
+
+<section class="reviews-section" id="reviews">
+
+    <div class="reviews-header">
+        <span class="reviews-badge">Avis clients</span>
+
+        <h2>Laisser un avis sur Éco-Challenge</h2>
+
+        <p>
+            Partagez votre expérience et dites-nous ce que vous pensez du jeu.
+        </p>
+    </div>
+
+    <form class="review-form">
+
+        <div class="input-group">
+            <label for="reviewName">Nom</label>
+            <input type="text" id="reviewName" placeholder="Votre prénom ou pseudo">
+        </div>
+
+        <div class="input-group">
+            <label for="reviewEmail">Adresse email</label>
+            <input type="email" id="reviewEmail" placeholder="Votre adresse email">
+        </div>
+
+        <div class="input-group">
+            <label for="reviewRating">Note</label>
+
+            <select id="reviewRating">
+                <option value="">Choisir une note</option>
+                <option value="5">★★★★★ - Excellent</option>
+                <option value="4">★★★★☆ - Très bien</option>
+                <option value="3">★★★☆☆ - Bien</option>
+                <option value="2">★★☆☆☆ - Moyen</option>
+                <option value="1">★☆☆☆☆ - Mauvais</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="reviewMessage">Votre avis</label>
+
+            <textarea
+                    id="reviewMessage"
+                    rows="6"
+                    placeholder="Écrivez votre avis ici..."
+            ></textarea>
+        </div>
+
+        <button type="submit" class="review-button">
+            Envoyer mon avis
+        </button>
+
+    </form>
+
+</section>
 
 <div class="tools-panel">
     <a href="#" class="back-to-top" title="Remonter en haut">⬆️</a>
