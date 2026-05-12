@@ -51,17 +51,17 @@
 }
 
 .reviews-header h2 {
-    font-size: clamp(2rem, 4vw, 3.1rem);
-    font-weight: 800;
+    margin-bottom: 18px;
     color: var(--green-dark);
+    font-size: clamp(2rem, 2.5vw, 3.1rem);
+    font-weight: 800;
     letter-spacing: -0.05em;
     line-height: 1.05;
-    margin-bottom: 18px;
 }
 
 .reviews-header p {
-    font-size: 1.08rem;
     color: var(--text-light);
+    font-size: 1.08rem;
     line-height: 1.85;
 }
 
@@ -79,32 +79,60 @@
 }
 
 .input-group label {
+    color: var(--text);
     font-size: 0.95rem;
     font-weight: 800;
-    color: var(--text);
 }
 
 .input-group input,
-.input-group select,
-.input-group textarea {
+.input-group textarea,
+.rating-select {
     width: 100%;
     padding: 19px 22px;
     background: rgba(255,255,255,0.94);
     border: 1px solid rgba(191,232,202,0.95);
     border-radius: 20px;
     outline: none;
+    color: var(--text);
     font-size: 1rem;
     font-family: 'Poppins', sans-serif;
-    color: var(--text);
     transition: 0.25s ease;
     box-shadow:
             0 10px 26px rgba(47, 158, 68, 0.05),
             inset 0 1px 0 rgba(255,255,255,0.9);
 }
 
+.rating-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    font-weight: 700;
+    background-image:
+            linear-gradient(135deg, rgba(255,255,255,0.96), rgba(245,255,248,0.92)),
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%232f9e44' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center, right 20px center;
+    background-size: cover, 18px;
+}
+
+.rating-select option {
+    background: #ffffff;
+    color: var(--text);
+    font-weight: 700;
+}
+
+.rating-select option[value="5"],
+.rating-select option[value="4"],
+.rating-select option[value="3"],
+.rating-select option[value="2"],
+.rating-select option[value="1"] {
+    color: #ffb300;
+}
+
 .input-group textarea {
-    resize: vertical;
     min-height: 190px;
+    resize: vertical;
 }
 
 .input-group input::placeholder,
@@ -113,10 +141,10 @@
 }
 
 .input-group input:focus,
-.input-group select:focus,
-.input-group textarea:focus {
+.input-group textarea:focus,
+.rating-select:focus {
+    background-color: #ffffff;
     border-color: var(--green);
-    background: #ffffff;
     transform: translateY(-2px);
     box-shadow:
             0 0 0 5px rgba(47, 158, 68, 0.13),
@@ -163,8 +191,8 @@
     }
 
     .input-group input,
-    .input-group select,
-    .input-group textarea {
+    .input-group textarea,
+    .rating-select {
         padding: 17px 18px;
     }
 
@@ -172,3 +200,33 @@
         padding: 18px;
     }
 }
+
+#reviewsSection {
+    display: none;
+}
+
+#reviewsSection.active {
+    display: block;
+    animation: reviewsFade 0.35s ease;
+}
+
+.reviews-section {
+    display: none;
+}
+
+.reviews-section.active {
+    display: block;
+}
+
+@keyframes reviewsFade {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

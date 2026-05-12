@@ -142,3 +142,37 @@ header {
     background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);
     color: #fff;
 }
+
+.reviews-button {
+    min-width: 125px;
+    height: 50px;
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(223, 240, 216, 0.95);
+    border: 1px solid rgba(169, 214, 166, 0.95);
+    color: #15803d;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: 0.25s ease;
+    box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.65),
+            0 4px 10px rgba(34,197,94,0.05);
+}
+.reviews-section {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+            opacity 0.35s ease,
+            transform 0.35s ease;
+}
+
+.reviews-section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
