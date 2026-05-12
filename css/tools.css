@@ -186,6 +186,10 @@
     filter: saturate(1.05);
 }
 
+.contact-block p {
+    color: var(--text-light);
+}
+
 @media (max-width: 520px) {
     .back-to-top {
         right: 90px

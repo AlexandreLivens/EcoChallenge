@@ -1,29 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
-:root {
-    --white: #ffffff;
-    --text: #163321;
-    --text-light: #4e6a58;
-    --green: #2f9e44;
-    --green-dark: #1f7a33;
-    --green-border: #bfe8ca;
-    --shadow: 0 10px 30px rgba(31, 122, 51, 0.10);
-    --shadow-hover: 0 18px 45px rgba(31, 122, 51, 0.16);
-    --radius-xl: 28px;
-    --radius-lg: 22px;
-    --transition: 0.3s ease;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: 'Poppins', sans-serif;
     background-image: url(../../assets/images/game/bg.png);

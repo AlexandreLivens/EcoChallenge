@@ -90,11 +90,14 @@ body.has-bg {
 }
 
 main {
-    background-color: black;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .main-content {
-    position: relative;
     z-index: 1;
     width: min(96vw, 1040px);
     padding: 28px 26px 34px;
@@ -106,7 +109,6 @@ main {
     backdrop-filter: blur(18px);
     isolation: isolate;
     animation: cardIn .5s ease;
-    background: red;
 }
 
 @keyframes cardIn {
@@ -120,7 +122,7 @@ main {
     }
 }
 
-.main::before, .main::after {
+.main-content::before, .main-content::after {
     content: "";
     position: absolute;
     width: 60%;
@@ -132,18 +134,17 @@ main {
     background: conic-gradient(from 180deg, rgba(0, 216, 168, .28), rgba(0, 133, 114, .18), transparent 65%)
 }
 
-.main::before {
+.main-content::before {
     top: -12%;
     left: -12%
 }
 
-.main::after {
+.main-content::after {
     bottom: -12%;
     right: -12%;
     transform: rotate(180deg)
 }
 
-/* ================== TOP BAR ================== */
 .toolbar {
     display: flex;
     justify-content: space-between;
@@ -180,7 +181,6 @@ main {
     user-select: none
 }
 
-/* ================== HEADER ================== */
 .head {
     display: flex;
     align-items: center;
@@ -224,7 +224,6 @@ main {
     }
 }
 
-/* ================== RULES IMAGE ================== */
 .rules {
     margin: 8px auto 18px;
     max-width: 860px;
@@ -243,7 +242,6 @@ main {
     height: auto
 }
 
-/* ================== BUTTONS ================== */
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -300,7 +298,6 @@ main {
     background: radial-gradient(closest-side, rgba(0, 240, 187, .7), transparent 70%)
 }
 
-/* ================== STEPPER / PROGRESS ================== */
 .stepper {
     display: none;
     gap: 8px;
@@ -338,7 +335,6 @@ main {
     transition: width .35s ease
 }
 
-/* ================== WIZARD ================== */
 .wizard {
     display: none;
     margin-top: 10px
