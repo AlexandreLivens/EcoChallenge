@@ -39,3 +39,12 @@
 html {
     scroll-behavior: smooth;
 }
+
+.logo-in-title {
+    box-shadow: none !important;
+    display: inline-block !important;
+    vertical-align: middle;
+    height: auto !important;
+    margin-left: 10px !important;
+
+}

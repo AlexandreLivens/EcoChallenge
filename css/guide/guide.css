@@ -15,11 +15,6 @@ main {
     padding: 30px 16px 120px;
 }
 
-img {
-    max-width: 100%;
-    display: block;
-}
-
 h1,
 h2,
 h3 {
@@ -68,14 +63,25 @@ strong {
     box-shadow: var(--shadow);
 }
 
+.main-title-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
 .main-title {
     text-align: center;
     font-size: clamp(1.9rem, 4vw, 3.2rem);
     font-weight: 800;
-    margin-bottom: 28px;
     color: var(--green-dark);
     letter-spacing: -0.04em;
     line-height: 1.08;
+}
+
+.title-with-logo {
+    display: inline;
 }
 
 .welcome-title {
