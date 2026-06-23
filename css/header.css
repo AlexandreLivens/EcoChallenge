@@ -8,7 +8,6 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    transform: none;
     width: 100%;
     min-height: 78px;
     padding: 12px 40px;
@@ -30,7 +29,6 @@ header {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    text-decoration: none;
     flex-shrink: 0;
 }
 
@@ -59,7 +57,6 @@ header {
 }
 
 .menu-item {
-    text-decoration: none;
     color: rgba(255, 255, 255, 0.94);
     font-size: clamp(0.95rem, 1.15vw, 1.08rem);
     font-weight: 500;
@@ -85,12 +82,10 @@ header {
     align-items: center;
     gap: 15px;
     margin: 0 20px;
-    color: black;
 }
 
 .contact-phone {
     color: white;
-    text-decoration: none;
     font-size: 16px;
     font-weight: 500;
     transition: color 0.3s ease;
@@ -100,14 +95,18 @@ header {
 .contact-buttons {
     display: flex;
     gap: 8px;
-    align-items: center !important;
+    align-items: center;
     margin: 0;
 }
 
 .socials {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    column-gap: 20px;
+    row-gap: 18px;
+    max-width: 190px;
+    margin-top: 15px;
+    margin-left: 0;
 }
 
 .socials a {
@@ -130,17 +129,30 @@ header {
 
 .whatsapp:hover {
     background: #25D366;
-    color: #fff;
 }
 
 .email:hover {
     background: #EA4335;
-    color: #fff;
 }
 
 .instagram:hover {
     background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);
-    color: #fff;
+}
+
+.youtube:hover {
+    background-color: #FF0000;
+}
+
+.tiktok:hover {
+    background-color: #000000;
+}
+
+.telegram:hover {
+    background-color: #0088cc;
+}
+
+.facebook:hover {
+    background-color: #1877F2;
 }
 
 .reviews-button {
@@ -155,20 +167,18 @@ header {
     color: #15803d;
     font-size: 1rem;
     font-weight: 700;
-    text-decoration: none;
     white-space: nowrap;
     transition: 0.25s ease;
     box-shadow:
-            inset 0 1px 0 rgba(255,255,255,0.65),
-            0 4px 10px rgba(34,197,94,0.05);
+            inset 0 1px 0 rgba(255, 255, 255, 0.65),
+            0 4px 10px rgba(34, 197, 94, 0.05);
 }
+
 .reviews-section {
     display: none;
     opacity: 0;
     transform: translateY(20px);
-    transition:
-            opacity 0.35s ease,
-            transform 0.35s ease;
+    transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
 .reviews-section.active {
